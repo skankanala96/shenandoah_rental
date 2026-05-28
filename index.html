@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cozy log cabin near the Shenandoah River — private hot tub, game room, kayak, fire pit, pet-friendly. 3 bedrooms, 3 levels, minutes from wineries and hiking." />
+  <meta property="og:title" content="Cozy Retreat near Shenandoah River | Hot Tub · Wineries" />
+  <meta property="og:description" content="Pet-friendly log cabin in the heart of the Shenandoah Valley. Private hot tub, game room, kayak, fire pit — minutes from the river, wineries, and hiking." />
+  <meta property="og:type" content="website" />
+  <title>Cozy Retreat near Shenandoah River | Hot Tub · Wineries</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed": "#181c1f",
+            "primary-container": "#1b3022",
+            "on-surface": "#1c1c18",
+            "tertiary-fixed-dim": "#c3c7ca",
+            "surface-bright": "#fcf9f3",
+            "primary-fixed-dim": "#b4cdb8",
+            "surface-dim": "#dcdad4",
+            "on-primary-fixed": "#0b2013",
+            "tertiary-container": "#282c2f",
+            "secondary-container": "#fec489",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#364c3c",
+            "background": "#fcf9f3",
+            "on-background": "#1c1c18",
+            "on-secondary-fixed": "#2c1600",
+            "surface-tint": "#4d6453",
+            "primary-fixed": "#d0e9d4",
+            "on-error-container": "#93000a",
+            "on-error": "#ffffff",
+            "inverse-surface": "#31312d",
+            "tertiary": "#14181a",
+            "surface-container-high": "#ebe8e2",
+            "on-secondary-fixed-variant": "#653e0f",
+            "outline": "#737973",
+            "secondary-fixed-dim": "#f5bb81",
+            "primary": "#061b0e",
+            "secondary": "#805524",
+            "surface-container": "#f0eee8",
+            "secondary-fixed": "#ffdcbd",
+            "on-primary": "#ffffff",
+            "on-tertiary-container": "#8f9396",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#f3f0ea",
+            "surface": "#fcf9f3",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e5e2dc",
+            "on-primary-container": "#819986",
+            "tertiary-fixed": "#e0e3e6",
+            "outline-variant": "#c3c8c1",
+            "on-secondary-container": "#794f1f",
+            "error": "#ba1a1a",
+            "surface-container-highest": "#e5e2dc",
+            "on-surface-variant": "#434843",
+            "inverse-primary": "#b4cdb8",
+            "on-tertiary-fixed-variant": "#43474a",
+            "surface-container-low": "#f6f3ed",
+            "error-container": "#ffdad6"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"
+          },
+          spacing: {
+            base: "8px", "margin-desktop": "64px", "max-width": "1280px",
+            gutter: "24px", "margin-mobile": "16px"
+          },
+          fontFamily: {
+            "label-sm": ["DM Sans"], "headline-lg": ["Noto Serif"],
+            "body-md": ["DM Sans"], "label-md": ["DM Sans"],
+            "body-lg": ["DM Sans"], "headline-sm": ["Noto Serif"],
+            "headline-md": ["Noto Serif"], "headline-lg-mobile": ["Noto Serif"]
+          },
+          fontSize: {
+            "label-sm":  ["12px", { lineHeight:"1.2", letterSpacing:"0.02em", fontWeight:"700" }],
+            "headline-lg": ["48px", { lineHeight:"1.2", letterSpacing:"-0.02em", fontWeight:"700" }],
+            "body-md":   ["16px", { lineHeight:"1.6", fontWeight:"400" }],
+            "label-md":  ["14px", { lineHeight:"1.4", letterSpacing:"0.05em", fontWeight:"500" }],
+            "body-lg":   ["18px", { lineHeight:"1.6", fontWeight:"400" }],
+            "headline-sm": ["24px", { lineHeight:"1.4", fontWeight:"600" }],
+            "headline-md": ["32px", { lineHeight:"1.3", fontWeight:"600" }],
+            "headline-lg-mobile": ["32px", { lineHeight:"1.2", fontWeight:"700" }]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    .star-filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+    /* ── Scroll-triggered animations ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.d1 { transition-delay:  80ms; }
+    .fade-up.d2 { transition-delay: 160ms; }
+    .fade-up.d3 { transition-delay: 240ms; }
+    .fade-up.d4 { transition-delay: 320ms; }
+
+    /* ── Calendar day states ── */
+    .cal-day {
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 1px;
+      height: 42px; border-radius: 8px; font-size: 13px; user-select: none;
+    }
+    .cal-day.available  { background: #d4ead7; color: #0b2013; font-weight: 600; }
+    .cal-day.booked     { background: #fde8e8; color: #9b3636; }
+    .cal-day.today      { outline: 2px solid #805524; outline-offset: 2px; }
+    .cal-day.past       { color: #c3c8c1; }
+    .cal-day.other-month{ color: #c3c8c1; }
+    .cal-mark { font-size: 9px; line-height: 1; }
+    .cal-day.available .cal-mark { color: #2d6a4f; opacity: 0.75; }
+    .cal-day.booked .cal-mark    { color: #c0392b; opacity: 0.8; }
+
+    /* ── Gallery lightbox ── */
+    #lightbox {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.92);
+      z-index: 9999; display: none; align-items: center; justify-content: center;
+    }
+    #lightbox.open { display: flex; }
+    #lb-img {
+      max-width: min(90vw, 1200px); max-height: 90vh;
+      object-fit: contain; border-radius: 12px;
+    }
+
+    /* ── Mobile slide-in menu ── */
+    #mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #mobile-menu.open { transform: translateX(0); }
+
+    /* ── Nav underline hover ── */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 2px; background: #061b0e;
+      transition: width 0.25s ease;
+    }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link.active { color: #061b0e; font-weight: 700; }
+
+    /* ── Scrollbar hide ── */
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    img { transition: opacity 0.3s ease; }
+    img:not([src]) { opacity: 0; }
+
+    /* ── Hero slideshow ── */
+    .hero-slide {
+      position: absolute; inset: 0;
+      opacity: 0;
+      transition: opacity 1.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hero-slide.active { opacity: 1; }
+
+    .hero-slide-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(1.18) contrast(1.04) saturate(1.1);
+      will-change: transform;
+      transform-origin: center center;
+    }
+
+    @keyframes hero-ken-burns-a {
+      from { transform: scale(1)    translate(0,     0);    }
+      to   { transform: scale(1.1)  translate(-1.5%, -1%);  }
+    }
+    @keyframes hero-ken-burns-b {
+      from { transform: scale(1.06) translate(1%, 0.5%); }
+      to   { transform: scale(1)    translate(0, 0);      }
+    }
+    @keyframes hero-ken-burns-c {
+      from { transform: scale(1)    translate(1%, -0.5%); }
+      to   { transform: scale(1.08) translate(-0.5%, 0.5%); }
+    }
+    @keyframes hero-ken-burns-d {
+      from { transform: scale(1.05) translate(-1%, 1%); }
+      to   { transform: scale(1)    translate(0.5%, -0.5%); }
+    }
+
+    .hero-slide[data-kb="a"].active .hero-slide-img { animation: hero-ken-burns-a 10s ease-out forwards; }
+    .hero-slide[data-kb="b"].active .hero-slide-img { animation: hero-ken-burns-b 10s ease-in-out forwards; }
+    .hero-slide[data-kb="c"].active .hero-slide-img { animation: hero-ken-burns-c 10s ease-out forwards; }
+    .hero-slide[data-kb="d"].active .hero-slide-img { animation: hero-ken-burns-d 10s ease-in-out forwards; }
+
+    /* ── Hero dot indicators ── */
+    .hero-dot {
+      width: 8px; height: 8px; border-radius: 9999px;
+      background: rgba(255,255,255,0.45);
+      transition: all 0.35s ease;
+      cursor: pointer; border: none; padding: 0; flex-shrink: 0;
+    }
+    .hero-dot.active {
+      background: #fff;
+      width: 24px;
+    }
+
+    /* ── Hero nav arrows ── */
+    .hero-arrow {
+      opacity: 0;
+      transition: opacity 0.3s ease, background 0.2s ease;
+    }
+    #hero:hover .hero-arrow { opacity: 1; }
+
+    /* ── Scroll progress bar ── */
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; z-index: 200;
+      height: 3px; width: 0%; pointer-events: none;
+      background: linear-gradient(90deg, #805524 0%, #fec489 60%, #ffdcbd 100%);
+      transition: width 0.08s linear;
+    }
+
+  </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════════════════════════ NAVIGATION -->
+<nav id="main-nav" class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 border-b border-outline/10 transition-shadow duration-300">
+  <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-max-width mx-auto">
+    <a href="#" class="font-headline-sm text-headline-sm text-primary tracking-tight hover:opacity-75 transition-opacity">
+      Shenandoah Retreat
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#about"        class="nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">The Home</a>
+      <a href="#amenities"    class="nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Amenities</a>
+      <a href="#gallery"      class="nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Gallery</a>
+      <a href="#availability" class="nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Availability</a>
+      <a href="#contact"      class="nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
+         class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">
+        Book Now
+      </a>
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Open navigation menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile slide-in menu -->
+<div id="mobile-menu" class="fixed inset-y-0 right-0 w-72 bg-surface z-50 shadow-2xl flex flex-col p-8 gap-6">
+  <button id="close-menu" class="self-end p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Close menu">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <a href="#about"        class="mobile-nav font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors py-1">The Home</a>
+  <a href="#amenities"    class="mobile-nav font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors py-1">Amenities</a>
+  <a href="#gallery"      class="mobile-nav font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors py-1">Gallery</a>
+  <a href="#availability" class="mobile-nav font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors py-1">Availability</a>
+  <a href="#contact"      class="mobile-nav font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors py-1">Contact</a>
+  <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
+     class="mt-auto bg-primary text-on-primary px-6 py-4 rounded-full font-label-md text-center hover:opacity-90 transition-all">
+    Book on Airbnb
+  </a>
+</div>
+<div id="menu-overlay" class="fixed inset-0 bg-black/30 z-40 hidden" aria-hidden="true"></div>
+
+
+<!-- ══════════════════════════════════════════════════════ HERO -->
+<section id="hero" class="relative h-[90vh] min-h-[600px] flex items-end overflow-hidden group">
+
+  <!-- Slides -->
+  <div id="hero-slides" class="absolute inset-0 z-0">
+    <div class="hero-slide active" data-kb="a">
+      <img class="hero-slide-img" src="photos/firepit_exterior.avif"
+           alt="Outdoor fire pit at the cabin" loading="eager" fetchpriority="high" />
+    </div>
+    <div class="hero-slide" data-kb="b">
+      <img class="hero-slide-img" src="photos/hotTub.avif"
+           alt="Private hot tub on the rear deck" loading="lazy" />
+    </div>
+    <div class="hero-slide" data-kb="c">
+      <img class="hero-slide-img" src="photos/Living_room_main.avif"
+           alt="Open-concept living room" loading="lazy" />
+    </div>
+    <div class="hero-slide" data-kb="d">
+      <img class="hero-slide-img" src="photos/nearby_lake.avif"
+           alt="Nearby lake and Shenandoah Valley scenery" loading="lazy" />
+    </div>
+  </div>
+
+  <!-- Gradient overlay -->
+  <div class="absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-black/25 to-black/5 pointer-events-none"></div>
+
+  <!-- Slide label badge -->
+  <div id="hero-label" class="absolute top-8 right-8 z-[3] bg-black/35 backdrop-blur-sm text-white/80 text-xs font-medium tracking-widest uppercase px-4 py-1.5 rounded-full
+                               opacity-0 transition-all duration-500 translate-y-2 pointer-events-none">
+    Fire Pit
+  </div>
+
+  <!-- Prev / Next arrows (desktop) -->
+  <button id="hero-prev" aria-label="Previous photo"
+          class="hero-arrow absolute left-5 top-1/2 -translate-y-1/2 z-[3] hidden md:flex
+                 w-11 h-11 rounded-full bg-black/30 backdrop-blur-sm items-center justify-center
+                 text-white hover:bg-black/55 active:scale-95 transition-all">
+    <span class="material-symbols-outlined">chevron_left</span>
+  </button>
+  <button id="hero-next" aria-label="Next photo"
+          class="hero-arrow absolute right-5 top-1/2 -translate-y-1/2 z-[3] hidden md:flex
+                 w-11 h-11 rounded-full bg-black/30 backdrop-blur-sm items-center justify-center
+                 text-white hover:bg-black/55 active:scale-95 transition-all">
+    <span class="material-symbols-outlined">chevron_right</span>
+  </button>
+
+  <!-- Content -->
+  <div class="relative z-[2] text-white px-margin-mobile md:px-margin-desktop pb-16 md:pb-28 max-w-max-width w-full mx-auto">
+    <p class="font-label-md uppercase tracking-widest text-secondary-fixed mb-4 fade-up hero-anim">
+      Shenandoah Valley, Virginia
+    </p>
+    <h1 class="font-headline-lg text-[38px] md:text-headline-lg mb-5 leading-tight drop-shadow-sm max-w-3xl fade-up d1 hero-anim">
+      Cozy Log Cabin Near<br class="hidden md:block" /> the Shenandoah River
+    </h1>
+    <p class="font-body-lg text-body-lg mb-10 opacity-90 max-w-lg fade-up d2 hero-anim">
+      Pet-friendly retreat with private hot tub, game room, kayak, and fire pit — minutes from the river, wineries, and hiking trails.
+    </p>
+    <div class="flex flex-wrap gap-4 fade-up d3 hero-anim">
+      <a href="#availability"
+         class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-md hover:brightness-110 active:scale-95 transition-all shadow-xl">
+        Check Availability
+      </a>
+      <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
+         class="border border-white/60 text-white px-8 py-4 rounded-full font-label-md hover:bg-white/10 active:scale-95 transition-all backdrop-blur-sm">
+        View on Airbnb
+      </a>
+    </div>
+  </div>
+
+  <!-- Dot indicators -->
+  <div id="hero-dots" class="absolute bottom-7 left-1/2 -translate-x-1/2 z-[3] flex gap-2.5 items-center">
+    <button class="hero-dot active" data-index="0" aria-label="Photo 1: Fire pit"></button>
+    <button class="hero-dot"        data-index="1" aria-label="Photo 2: Hot tub"></button>
+    <button class="hero-dot"        data-index="2" aria-label="Photo 3: Living room"></button>
+    <button class="hero-dot"        data-index="3" aria-label="Photo 4: Nearby lake"></button>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════ PULL QUOTE -->
+<section class="bg-primary text-on-primary py-14 px-margin-mobile md:px-margin-desktop">
+  <div class="max-w-xl mx-auto text-center fade-up">
+    <p class="font-headline-lg text-[72px] md:text-[88px] leading-none text-primary-fixed-dim/20 select-none -mb-2 md:-mb-3" aria-hidden="true">&ldquo;</p>
+    <p id="pull-quote" class="font-headline-md italic text-[19px] md:text-[25px] leading-[1.7] text-on-primary-container">
+      Spend your mornings drinking coffee on the front porch, your days exploring, and your nights soaking in the hot tub under the stars.
+    </p>
+    <div class="flex items-center justify-center gap-3 mt-7">
+      <div class="w-10 h-px bg-primary-fixed-dim/30"></div>
+      <span class="material-symbols-outlined text-primary-fixed-dim/50" style="font-size:15px">park</span>
+      <div class="w-10 h-px bg-primary-fixed-dim/30"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════ ABOUT -->
+<section id="about" class="py-14 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+    <div class="space-y-5">
+      <div class="inline-block px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-label-sm uppercase tracking-widest fade-up">
+        Your Valley Retreat
+      </div>
+      <h2 class="font-headline-md text-headline-md text-primary fade-up d1">
+        A cozy log cabin where every detail invites you to slow down.
+      </h2>
+      <div id="property-description" class="space-y-4 fade-up d2">
+        <p class="font-body-lg text-body-lg text-on-surface-variant">
+          Pet-friendly log cabin in the heart of the Shenandoah Valley — perfect for relaxing getaways or adventure-filled weekends. Enjoy a private hot tub under the stars, game room, and multiple cozy living spaces for families and groups.
+        </p>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">
+          New, fully furnished with 3 bedrooms, 2.5 bathrooms, and 3 finished levels of thoughtfully designed space — from the loft lounge with daybed to the lower-level game area and the primary suite featuring heated floors and a rain-head walk-in shower.
+        </p>
+      </div>
+
+      <!-- Check-in / Check-out -->
+      <div class="flex gap-6 fade-up d3">
+        <div>
+          <p class="font-label-sm uppercase text-outline tracking-widest mb-1">Check-in</p>
+          <p id="check-in" class="font-headline-sm text-headline-sm text-primary">3:00 PM</p>
+        </div>
+        <div class="w-px bg-outline/20"></div>
+        <div>
+          <p class="font-label-sm uppercase text-outline tracking-widest mb-1">Check-out</p>
+          <p id="check-out" class="font-headline-sm text-headline-sm text-primary">11:00 AM</p>
+        </div>
+      </div>
+
+      <!-- Badges -->
+      <div class="flex flex-wrap gap-5 fade-up d4">
+        <span class="flex items-center gap-2 font-label-md text-primary">
+          <span class="material-symbols-outlined text-xl">key</span> Keypad Self Check-in
+        </span>
+        <span class="flex items-center gap-2 font-label-md text-primary">
+          <span class="material-symbols-outlined text-xl">pets</span> Pets Welcome
+        </span>
+        <span class="flex items-center gap-2 font-label-md text-primary">
+          <span class="material-symbols-outlined text-xl">kayaking</span> Kayak on Property
+        </span>
+      </div>
+    </div>
+
+    <div class="relative group fade-up">
+      <div class="absolute -inset-4 bg-primary/5 rounded-2xl -rotate-2 group-hover:rotate-0 transition-transform duration-500 pointer-events-none"></div>
+      <img src="photos/Living_room_main.avif"
+           alt="Open-concept living room on the main level"
+           class="relative rounded-2xl shadow-xl w-full h-[420px] object-cover" />
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════ STATS BAR -->
+<section class="bg-surface-container-low border-y border-outline/10">
+  <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+    <div class="grid grid-cols-2 md:grid-cols-4 md:divide-x md:divide-outline/20">
+      <div class="flex flex-col items-center justify-center py-5 gap-1.5 fade-up">
+        <span class="material-symbols-outlined text-secondary text-3xl">king_bed</span>
+        <p class="font-headline-sm text-headline-sm text-primary">3 Bedrooms</p>
+        <p class="text-label-sm text-outline uppercase tracking-widest">Sleeps 6</p>
+      </div>
+      <div class="flex flex-col items-center justify-center py-5 gap-1.5 fade-up d1">
+        <span class="material-symbols-outlined text-secondary text-3xl">bathtub</span>
+        <p class="font-headline-sm text-headline-sm text-primary">2.5 Baths</p>
+        <p class="text-label-sm text-outline uppercase tracking-widest">Rain shower + heated floors</p>
+      </div>
+      <div class="flex flex-col items-center justify-center py-5 gap-1.5 fade-up d2">
+        <span class="material-symbols-outlined text-secondary text-3xl">stairs</span>
+        <p class="font-headline-sm text-headline-sm text-primary">3 Levels</p>
+        <p class="text-label-sm text-outline uppercase tracking-widest">Loft · Main · Game room</p>
+      </div>
+      <div class="flex flex-col items-center justify-center py-5 gap-1.5 fade-up d3">
+        <span class="material-symbols-outlined text-secondary text-3xl">hot_tub</span>
+        <p class="font-headline-sm text-headline-sm text-primary">Hot Tub + Fire Pit</p>
+        <p class="text-label-sm text-outline uppercase tracking-widest">Open year-round</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════ SLEEPING ARRANGEMENTS -->
+<section class="py-14 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+  <div class="mb-8">
+    <p class="font-label-sm uppercase tracking-widest text-secondary mb-3 fade-up">Sleeping Arrangements</p>
+    <h2 class="font-headline-md text-headline-md text-primary fade-up d1">Three bedrooms, room for six.</h2>
+    <p class="font-body-lg text-on-surface-variant mt-3 max-w-xl fade-up d2">Each bedroom is thoughtfully furnished — a restful space waiting for every guest.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- Bedroom 1 -->
+    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-outline/10 hover:shadow-md hover:-translate-y-1 transition-all duration-300 fade-up">
+      <div class="relative">
+        <img src="photos/bedroom1.avif" alt="Primary bedroom"
+             class="w-full h-56 object-cover" />
+        <div class="absolute top-4 left-4 bg-primary/75 backdrop-blur-sm text-on-primary font-label-sm uppercase tracking-widest px-3 py-1.5 rounded-full">
+          Bedroom 1
+        </div>
+      </div>
+      <div class="p-6">
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Primary Suite</h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-on-surface-variant font-body-md">
+            <span class="material-symbols-outlined text-xl text-secondary">king_bed</span>
+            1 Queen Bed
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bedroom 2 -->
+    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-outline/10 hover:shadow-md hover:-translate-y-1 transition-all duration-300 fade-up d1">
+      <div class="relative">
+        <img src="photos/bedroom2.avif" alt="Second bedroom"
+             class="w-full h-56 object-cover" />
+        <div class="absolute top-4 left-4 bg-primary/75 backdrop-blur-sm text-on-primary font-label-sm uppercase tracking-widest px-3 py-1.5 rounded-full">
+          Bedroom 2
+        </div>
+      </div>
+      <div class="p-6">
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Guest Room</h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-on-surface-variant font-body-md">
+            <span class="material-symbols-outlined text-xl text-secondary">king_bed</span>
+            1 Queen Bed
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bedroom 3 -->
+    <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-outline/10 hover:shadow-md hover:-translate-y-1 transition-all duration-300 fade-up d2">
+      <div class="relative">
+        <img src="photos/bedroom3.avif" alt="Third bedroom"
+             class="w-full h-56 object-cover" />
+        <div class="absolute top-4 left-4 bg-primary/75 backdrop-blur-sm text-on-primary font-label-sm uppercase tracking-widest px-3 py-1.5 rounded-full">
+          Bedroom 3
+        </div>
+      </div>
+      <div class="p-6">
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Cozy Room</h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 text-on-surface-variant font-body-md">
+            <span class="material-symbols-outlined text-xl text-secondary">king_bed</span>
+            1 Queen Bed
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════ GALLERY -->
+<section id="gallery" class="py-14 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+  <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+    <div>
+      <p class="font-label-sm uppercase tracking-widest text-secondary mb-3 fade-up">Photo Gallery</p>
+      <h2 class="font-headline-md text-headline-md text-primary fade-up d1">The Space</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant mt-2 fade-up d2">Click any photo to explore in full screen</p>
+    </div>
+    <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
+       class="inline-flex items-center gap-1.5 font-label-md text-secondary hover:text-primary transition-colors fade-up d2 flex-shrink-0 group">
+      View all photos on Airbnb
+      <span class="material-symbols-outlined text-xl group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+    </a>
+  </div>
+
+  <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3">
+    <!-- Large: exterior main -->
+    <div class="col-span-2 row-span-2 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-64 md:h-auto" style="min-height:260px"
+         data-src="photos/exterior_v1.avif">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/exterior_v1.avif" alt="Cabin exterior" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-5xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Cabin Exterior</div>
+    </div>
+    <!-- Living room -->
+    <div class="col-span-1 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[130px] md:h-auto"
+         data-src="photos/Living_room_main.avif">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/Living_room_main.avif" alt="Main living room" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Living Room</div>
+    </div>
+    <!-- Full kitchen -->
+    <div class="col-span-1 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[130px] md:h-auto"
+         data-src="photos/full_kithcen.avif">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/full_kithcen.avif" alt="Full kitchen with island" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Full Kitchen</div>
+    </div>
+    <!-- Hot tub -->
+    <div class="col-span-1 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[130px] md:h-auto"
+         data-src="photos/hotTub.avif">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/hotTub.avif" alt="Private hot tub on the rear deck" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Private Hot Tub</div>
+    </div>
+    <!-- Primary bedroom -->
+    <div class="col-span-1 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[130px] md:h-auto"
+         data-src="photos/bedroom1.avif">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/bedroom1.avif" alt="Primary bedroom" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Primary Bedroom</div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="col-span-1 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[130px] md:h-44"
+         data-src="photos/patio_v1.avif">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/patio_v1.avif" alt="Front patio seating" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Front Patio</div>
+    </div>
+    <div class="col-span-1 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[130px] md:h-44"
+         data-src="photos/exterior_deck.avif">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/exterior_deck.avif" alt="Exterior deck" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Rear Deck</div>
+    </div>
+    <div class="col-span-1 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[130px] md:h-44"
+         data-src="photos/full_bath1.avif">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/full_bath1.avif" alt="Full bathroom" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Full Bathroom</div>
+    </div>
+    <div class="col-span-1 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[130px] md:h-44"
+         data-src="photos/bedroom2.avif">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/bedroom2.avif" alt="Second bedroom" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Second Bedroom</div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="col-span-2 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[160px] md:h-52"
+         data-src="photos/exterior_snow.avif">
+      <img class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+           src="photos/exterior_snow.avif" alt="Cabin dusted in winter snow" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-5xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Winter at the Cabin</div>
+    </div>
+    <div class="col-span-1 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[130px] md:h-52"
+         data-src="photos/Living_room_view1.avif">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/Living_room_view1.avif" alt="Living room view" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Living Room View</div>
+    </div>
+    <div class="col-span-1 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[130px] md:h-52"
+         data-src="photos/nearby_lake.avif">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/nearby_lake.avif" alt="Nearby lake and scenery" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Nearby Lake</div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button id="lb-close" class="absolute top-5 right-5 text-white hover:opacity-60 transition-opacity z-10" aria-label="Close">
+    <span class="material-symbols-outlined text-4xl">close</span>
+  </button>
+  <button id="lb-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:opacity-60 transition-opacity z-10" aria-label="Previous photo">
+    <span class="material-symbols-outlined text-5xl">chevron_left</span>
+  </button>
+  <button id="lb-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:opacity-60 transition-opacity z-10" aria-label="Next photo">
+    <span class="material-symbols-outlined text-5xl">chevron_right</span>
+  </button>
+  <img id="lb-img" src="" alt="Gallery photo" />
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ AMENITIES -->
+<section id="amenities" class="py-14 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+  <div class="max-w-max-width mx-auto">
+    <div class="mb-8">
+      <p class="font-label-sm uppercase tracking-widest text-secondary mb-3 fade-up">What's Included</p>
+      <h2 class="font-headline-md text-headline-md text-primary fade-up d1">Top Amenities</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl fade-up d2">Everything you need — and a few extras that make the difference.</p>
+    </div>
+
+    <!-- Bento grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Private Hot Tub — left, tall -->
+      <div class="relative rounded-2xl overflow-hidden group h-72 md:h-[520px] fade-up">
+        <img src="photos/hotTub.avif"
+             alt="Private rear deck with hot tub"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+        <div class="absolute bottom-8 left-8 text-white">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="material-symbols-outlined">hot_tub</span>
+            <span class="font-label-sm uppercase tracking-widest">Outdoor</span>
+          </div>
+          <h4 class="font-headline-sm text-headline-sm">Private Hot Tub</h4>
+          <p class="text-sm opacity-75 mt-1 max-w-xs">Soak under the stars on the rear deck — open year-round</p>
+        </div>
+      </div>
+
+      <!-- Patio / Deck / Fire Pit — right, same tall height -->
+      <div class="relative rounded-2xl overflow-hidden group h-72 md:h-[520px] fade-up d1">
+        <img src="photos/patio_v2.avif"
+             alt="Porch and deck with outdoor seating"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent"></div>
+        <div class="absolute bottom-8 left-8 text-white">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="material-symbols-outlined">deck</span>
+            <span class="font-label-sm uppercase tracking-widest">Outdoor Living</span>
+          </div>
+          <h4 class="font-headline-sm text-headline-sm">Porch, Deck & Fire Pit</h4>
+          <p class="text-sm opacity-75 mt-1 max-w-xs">Front porch seating, rear deck, and fire pit — all yours</p>
+        </div>
+      </div>
+
+      <!-- WiFi tile -->
+      <div class="relative rounded-2xl bg-primary text-on-primary p-8 flex flex-col justify-end h-48 hover:brightness-110 transition-all duration-300 fade-up d2">
+        <span class="material-symbols-outlined text-4xl mb-4 text-primary-fixed">wifi</span>
+        <h4 class="font-headline-sm text-headline-sm">High-Speed WiFi</h4>
+        <p class="text-on-primary-container text-sm mt-2 leading-snug">Fast enough for remote work and streaming.</p>
+      </div>
+
+      <!-- Game Room — with real photo -->
+      <div class="relative rounded-2xl overflow-hidden group h-48 fade-up d3">
+        <img src="photos/gameroom.avif"
+             alt="Lower-level game room"
+             class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="material-symbols-outlined">sports_esports</span>
+            <span class="font-label-sm uppercase tracking-widest">Entertainment</span>
+          </div>
+          <h4 class="font-headline-sm text-headline-sm">Game Room</h4>
+          <p class="text-sm opacity-75 mt-1">Lower level with TV, games, and entertainment area.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amenity chip grid (CMS-driven; fallback rendered by JS) -->
+    <div id="amenity-chips" class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3"></div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════ AREA GUIDE -->
+<section class="py-14 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+  <div class="bg-primary text-on-primary rounded-3xl overflow-hidden flex flex-col md:flex-row">
+    <div class="flex-1 p-8 md:p-12 space-y-5">
+      <span class="font-label-md uppercase tracking-widest text-secondary-fixed">Local Knowledge</span>
+      <h2 class="font-headline-lg text-[28px] md:text-[40px] leading-tight fade-up">
+        Explore the Best of the Shenandoah Valley
+      </h2>
+      <p class="font-body-lg text-on-primary-container fade-up d1">
+        From paddling the river out front to sipping at Valley wineries and hiking the Appalachian Trail — there's something for every pace.
+      </p>
+      <ul id="nearby-list" class="space-y-3 fade-up d2">
+        <li class="flex items-center justify-between text-on-primary-container">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">park</span>
+            John T Shipe JR Park
+          </div>
+          <span class="text-secondary-fixed text-sm font-medium ml-4 flex-shrink-0">4 min drive</span>
+        </li>
+        <li class="flex items-center justify-between text-on-primary-container">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">water</span>
+            Shenandoah River
+          </div>
+          <span class="text-secondary-fixed text-sm font-medium ml-4 flex-shrink-0">5 min drive</span>
+        </li>
+        <li class="flex items-center justify-between text-on-primary-container">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">sailing</span>
+            Deer Lake
+          </div>
+          <span class="text-secondary-fixed text-sm font-medium ml-4 flex-shrink-0">9 min drive</span>
+        </li>
+        <li class="flex items-center justify-between text-on-primary-container">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">forest</span>
+            George Richard Thompson Wildlife Area
+          </div>
+          <span class="text-secondary-fixed text-sm font-medium ml-4 flex-shrink-0">11 min drive</span>
+        </li>
+        <li class="flex items-center justify-between text-on-primary-container">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">landscape</span>
+            Sky Meadows State Park
+          </div>
+          <span class="text-secondary-fixed text-sm font-medium ml-4 flex-shrink-0">14 min drive</span>
+        </li>
+      </ul>
+      <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
+         class="inline-block bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-md hover:brightness-110 transition-all fade-up d3">
+        View Full Listing
+      </a>
+    </div>
+    <div class="flex-1 relative min-h-[300px]">
+      <img src="photos/nearby_lake.avif"
+           alt="Nearby lake and Shenandoah Valley scenery"
+           class="absolute inset-0 w-full h-full object-cover" />
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ══════════════════════════════════════════════════════ AVAILABILITY -->
+<section id="availability" class="py-14 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+  <div class="max-w-max-width mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-12 lg:gap-16 items-start">
+
+      <!-- Left: description -->
+      <div class="space-y-5 lg:pt-4 fade-up">
+        <div>
+          <p class="font-label-sm uppercase tracking-widest text-secondary mb-4">Plan Your Stay</p>
+          <h2 class="font-headline-lg text-[40px] md:text-[48px] leading-[1.1] text-primary">
+            Live<br>Availability
+          </h2>
+        </div>
+        <div class="space-y-2 font-body-lg text-on-surface-variant">
+          <p>Synced automatically with our Airbnb calendar.</p>
+          <p class="font-body-md">
+            <span class="font-semibold" style="color:#2d6a4f;">Green ✓</span> = available &nbsp;·&nbsp;
+            <span class="font-semibold" style="color:#c0392b;">Red ✗</span> = booked.
+          </p>
+          <p class="font-body-md">Contact us below to reserve your dates.</p>
+        </div>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+            <span class="text-secondary font-bold flex-shrink-0">✓</span>
+            No Airbnb service fee when you book direct
+          </li>
+          <li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+            <span class="text-secondary font-bold flex-shrink-0">✓</span>
+            Direct communication with your hosts
+          </li>
+          <li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+            <span class="text-secondary font-bold flex-shrink-0">✓</span>
+            Response guaranteed within 1 hour
+          </li>
+          <li class="flex items-center gap-3 font-body-md text-on-surface-variant">
+            <span class="text-secondary font-bold flex-shrink-0">✓</span>
+            Calendar auto-syncs every 30 minutes
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: calendar -->
+      <div class="bg-white p-6 md:p-10 rounded-3xl shadow-sm border border-outline/10 fade-up d1">
+        <div class="flex items-center justify-between mb-8">
+          <button id="cal-prev" aria-label="Previous month"
+                  class="w-10 h-10 rounded-full border border-outline/20 flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all">
+            <span class="material-symbols-outlined">chevron_left</span>
+          </button>
+          <div class="flex gap-8 md:gap-16 text-center">
+            <h3 id="cal-label-1" class="font-label-md text-primary uppercase tracking-widest text-sm md:text-base w-36"></h3>
+            <h3 id="cal-label-2" class="font-label-md text-primary uppercase tracking-widest text-sm md:text-base w-36 hidden md:block"></h3>
+          </div>
+          <button id="cal-next" aria-label="Next month"
+                  class="w-10 h-10 rounded-full border border-outline/20 flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all">
+            <span class="material-symbols-outlined">chevron_right</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+          <div id="cal-grid-1"></div>
+          <div id="cal-grid-2" class="hidden md:block"></div>
+        </div>
+
+        <div class="flex items-center justify-center gap-8 pt-6 mt-6 border-t border-outline/10">
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 rounded" style="background:#d4ead7;border:1px solid #a8d5b0;"></div>
+            <span class="text-sm font-label-md text-on-surface">Available</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-4 h-4 rounded" style="background:#fde8e8;border:1px solid #f5b7b1;"></div>
+            <span class="text-sm font-label-md text-on-surface">Booked</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════ DIRECT BOOKING / CONTACT -->
+<section id="contact" class="py-14 px-margin-mobile md:px-margin-desktop bg-surface-container-low">
+  <div class="max-w-max-width mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+
+      <!-- Left: pitch + property info -->
+      <div class="space-y-6">
+        <div>
+          <p class="font-label-sm uppercase tracking-widest text-secondary mb-4 fade-up">Get in Touch</p>
+          <h2 class="font-headline-lg text-[32px] md:text-headline-lg text-primary leading-tight mb-5 fade-up d1">
+            Book direct &amp; save.
+          </h2>
+          <p class="font-body-lg text-body-lg text-on-surface-variant fade-up d2">
+            Skip the Airbnb service fee by booking with us directly. We'll respond within 24 hours with availability, rates, and answers to anything on your mind.
+          </p>
+        </div>
+
+        <div class="space-y-4 fade-up d3">
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-secondary mt-0.5 flex-shrink-0">location_on</span>
+            <div>
+              <p class="font-label-sm uppercase tracking-widest text-secondary mb-1">Location</p>
+              <p class="font-body-md text-on-surface">Shenandoah Valley, Virginia</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-secondary mt-0.5 flex-shrink-0">schedule</span>
+            <div>
+              <p class="font-label-sm uppercase tracking-widest text-secondary mb-1">Check-in / Check-out</p>
+              <p class="font-body-md text-on-surface">After 3:00 PM · Before 11:00 AM</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-secondary mt-0.5 flex-shrink-0">group</span>
+            <div>
+              <p class="font-label-sm uppercase tracking-widest text-secondary mb-1">Maximum Guests</p>
+              <p class="font-body-md text-on-surface">6 guests · 3 bedrooms</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-secondary mt-0.5 flex-shrink-0">bolt</span>
+            <div>
+              <p class="font-label-sm uppercase tracking-widest text-secondary mb-1">Response Time</p>
+              <p class="font-body-md text-on-surface">Within 24 hours · English</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: inquiry form -->
+      <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-outline/10 fade-up d1">
+        <form id="inquiry-form" class="space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="font-label-sm uppercase tracking-widest text-secondary block mb-2">Your Name</label>
+              <input type="text" name="name" placeholder="Jane Smith" required
+                     class="w-full border border-outline/30 rounded-xl px-4 py-3 font-body-md text-on-surface placeholder-outline/60 focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition-colors" />
+            </div>
+            <div>
+              <label class="font-label-sm uppercase tracking-widest text-secondary block mb-2">Email Address</label>
+              <input type="email" name="email" placeholder="jane@email.com" required
+                     class="w-full border border-outline/30 rounded-xl px-4 py-3 font-body-md text-on-surface placeholder-outline/60 focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition-colors" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="font-label-sm uppercase tracking-widest text-secondary block mb-2">Check-in Date</label>
+              <input type="date" name="checkin"
+                     class="w-full border border-outline/30 rounded-xl px-4 py-3 font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition-colors" />
+            </div>
+            <div>
+              <label class="font-label-sm uppercase tracking-widest text-secondary block mb-2">Check-out Date</label>
+              <input type="date" name="checkout"
+                     class="w-full border border-outline/30 rounded-xl px-4 py-3 font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition-colors" />
+            </div>
+          </div>
+
+          <div>
+            <label class="font-label-sm uppercase tracking-widest text-secondary block mb-2">Number of Guests</label>
+            <div class="relative">
+              <select name="guests"
+                      class="w-full border border-outline/30 rounded-xl px-4 py-3 font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition-colors appearance-none bg-white pr-10">
+                <option value="">Select</option>
+                <option>1 guest</option>
+                <option>2 guests</option>
+                <option>3 guests</option>
+                <option>4 guests</option>
+                <option>5 guests</option>
+                <option>6 guests</option>
+              </select>
+              <span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-xl">expand_more</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="font-label-sm uppercase tracking-widest text-secondary block mb-2">Questions or Special Requests</label>
+            <textarea name="message" rows="4" placeholder="Tell us about your trip or any questions..."
+                      class="w-full border border-outline/30 rounded-xl px-4 py-3 font-body-md text-on-surface placeholder-outline/60 focus:outline-none focus:ring-2 focus:ring-secondary/40 focus:border-secondary transition-colors resize-none"></textarea>
+          </div>
+
+          <button type="submit"
+                  class="w-full bg-secondary text-on-secondary py-4 rounded-full font-label-md uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all shadow-md">
+            Send Inquiry
+          </button>
+
+          <p id="form-success" class="hidden text-center text-sm text-primary font-medium py-2">
+            ✓ Message sent! We'll be in touch within 24 hours.
+          </p>
+
+          <p class="text-xs text-outline text-center leading-relaxed">
+            We respond to all inquiries within 24 hours. Your information will not be shared with third parties.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════ FOOTER -->
+<footer class="bg-primary text-on-primary">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-max-width mx-auto">
+    <div class="space-y-6">
+      <p class="font-headline-md text-headline-md text-on-primary">Shenandoah Retreat</p>
+      <p class="text-on-primary/75 font-body-md">Pet-friendly log cabin near the Shenandoah River — hot tub, game room, kayak, fire pit. Hosted by Rex.</p>
+    </div>
+    <div class="flex flex-col gap-4">
+      <h4 class="font-label-md uppercase tracking-widest text-secondary-fixed">Explore</h4>
+      <a href="#about"        class="text-on-primary/75 hover:text-on-primary transition-colors font-body-md">The Home</a>
+      <a href="#amenities"    class="text-on-primary/75 hover:text-on-primary transition-colors font-body-md">Amenities</a>
+      <a href="#gallery"      class="text-on-primary/75 hover:text-on-primary transition-colors font-body-md">Gallery</a>
+      <a href="#availability" class="text-on-primary/75 hover:text-on-primary transition-colors font-body-md">Availability</a>
+    </div>
+    <div class="space-y-6">
+      <h4 class="font-label-md uppercase tracking-widest text-secondary-fixed">Stay Connected</h4>
+      <p class="text-on-primary/75 font-body-md">Get seasonal updates and be first to know about openings.</p>
+      <form class="flex gap-2" onsubmit="return false;">
+        <input type="email" placeholder="Email address"
+               class="bg-primary-container/60 border-none rounded-lg flex-1 px-4 py-2.5 text-on-primary placeholder-on-primary/40 focus:ring-2 focus:ring-secondary outline-none" />
+        <button type="submit"
+                class="bg-on-primary text-primary px-4 py-2.5 rounded-lg font-label-sm hover:opacity-90 active:scale-95 transition-all">
+          Join
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="border-t border-on-primary/10 py-6 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <p class="text-on-primary/50 text-label-sm">© 2026 Shenandoah Retreat. All rights reserved.</p>
+    <div class="flex gap-6">
+      <a href="#" class="text-on-primary/50 hover:text-on-primary/80 transition-colors text-label-sm">House Rules</a>
+      <a href="#" class="text-on-primary/50 hover:text-on-primary/80 transition-colors text-label-sm">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════════════ SCRIPTS -->
+<script>
+/* ============================================================
+   SANITY CONFIG
+   Fill in SANITY_PROJECT_ID once you've run `npm create sanity@latest`
+   ============================================================ */
+const SANITY_PROJECT_ID = 'YOUR_PROJECT_ID'; // <-- replace after Sanity setup
+const SANITY_DATASET    = 'production';
+
+async function sanityFetch(query) {
+  try {
+    const url = `https://${SANITY_PROJECT_ID}.apicdn.sanity.io/v2024-01-01/data/query/${SANITY_DATASET}`
+              + `?query=${encodeURIComponent(query)}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`Sanity ${res.status}`);
+    return (await res.json()).result;
+  } catch {
+    return null;
+  }
+}
+
+/* ============================================================
+   FALLBACK CONTENT  (matches actual Airbnb listing)
+   These render immediately; CMS data overlays them once
+   SANITY_PROJECT_ID is set and content is seeded.
+   ============================================================ */
+const FALLBACK = {
+  pullQuote: 'Spend your mornings drinking coffee on the front porch, your days exploring, and your nights soaking in the hot tub under the stars.',
+  checkIn:  '3:00 PM',
+  checkOut: '11:00 AM',
+  amenities: [
+    { icon: 'sports_esports',        name: 'Game Room',           highlight: true  },
+    { icon: 'kayaking',              name: 'Kayak Included',      highlight: true  },
+    { icon: 'ev_station',            name: 'EV Charger',          highlight: false },
+    { icon: 'local_laundry_service', name: 'Washer & Dryer',      highlight: false },
+    { icon: 'coffee',                name: 'Drip & Keurig',       highlight: false },
+    { icon: 'thermostat',            name: 'Heated Floors',       highlight: true  },
+    { icon: 'speaker',               name: 'Bluetooth Sound',     highlight: false },
+    { icon: 'outdoor_grill',         name: 'BBQ Grill',           highlight: false },
+    { icon: 'kitchen',               name: 'Full Kitchen',        highlight: false },
+    { icon: 'security_camera',       name: 'Exterior Cameras',    highlight: false },
+    { icon: 'blender',               name: 'Blender & Baking',    highlight: false },
+    { icon: 'extension',              name: 'Board Games',         highlight: false },
+  ],
+  nearbyDistances: [
+    { icon: 'park',      text: 'John T Shipe JR Park — 4 min drive'                        },
+    { icon: 'water',     text: 'Shenandoah River — 5 min drive'                            },
+    { icon: 'sailing',   text: 'Deer Lake — 9 min drive'                                   },
+    { icon: 'forest',    text: 'George Richard Thompson Wildlife Area — 11 min drive'      },
+    { icon: 'landscape', text: 'Sky Meadows State Park — 14 min drive'                    },
+  ],
+  reviews: [
+    {
+      guestName: 'Sarah Jenkins',
+      location:  'Richmond, VA',
+      date:      'October 2023',
+      rating:    5,
+      text:      'An absolute gem. The kids loved the game room and we spent every night in the hot tub. The cabin is brand new and the finishes are incredible — heated bathroom floors, rain shower, everything. We\'re already planning our return.',
+    },
+    {
+      guestName: 'Mark Thompson',
+      location:  'Washington, D.C.',
+      date:      'September 2023',
+      rating:    5,
+      text:      'Perfect base for the Shenandoah Valley. We kayaked the river, hit two wineries, and came back to soak in the hot tub. The kitchen is fully equipped — we cooked every night. Rex was a great host and easy to reach.',
+    },
+    {
+      guestName: 'Emily & David R.',
+      location:  'Philadelphia, PA',
+      date:      'August 2023',
+      rating:    5,
+      text:      'One of the nicest rentals we\'ve ever stayed in. The three levels give everyone their own space — kids claimed the loft, we had the main-level primary suite. The front porch with coffee in the morning was everything.',
+    },
+  ],
+  blockedRanges: [],
+};
+
+/* ============================================================
+   CMS FETCHERS
+   ============================================================ */
+async function fetchProperty() {
+  const data = await sanityFetch(
+    `*[_type == "property" && _id == "property-singleton"][0]
+     { pullQuote, checkIn, checkOut, amenities, nearbyDistances }`
+  );
+  if (!data) return;
+  if (data.pullQuote) {
+    const el = document.getElementById('pull-quote');
+    if (el) el.textContent = `"${data.pullQuote}"`;
+  }
+  if (data.checkIn)  { const el = document.getElementById('check-in');  if (el) el.textContent = data.checkIn;  }
+  if (data.checkOut) { const el = document.getElementById('check-out'); if (el) el.textContent = data.checkOut; }
+  if (data.amenities?.length)       renderAmenityChips(data.amenities);
+  if (data.nearbyDistances?.length) renderNearby(data.nearbyDistances);
+}
+
+async function fetchReviews() {
+  const data = await sanityFetch(
+    `*[_type == "review" && visible == true] | order(order asc)
+     { guestName, location, date, rating, text }`
+  );
+  renderReviews(data?.length ? data : FALLBACK.reviews);
+}
+
+async function fetchBlockedDates() {
+  const data = await sanityFetch(
+    `*[_type == "blockedDates" && _id == "blocked-dates-singleton"][0]{ ranges }`
+  );
+  window._blockedRanges = data?.ranges ?? FALLBACK.blockedRanges;
+  renderCalendars();
+}
+
+async function fetchGallery() {
+  const data = await sanityFetch(
+    `*[_type == "galleryPhoto"] | order(order asc) { caption, size, image }`
+  );
+  if (!data?.length) return;
+
+  const grid = document.getElementById('gallery-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+
+  data.forEach((photo, i) => {
+    const ref = photo.image?.asset?._ref ?? '';
+    const src = ref
+      ? `https://cdn.sanity.io/images/${SANITY_PROJECT_ID}/${SANITY_DATASET}/${ref.replace('image-','').replace(/-(\w+)$/,'.$1')}`
+      : null;
+    if (!src) return;
+
+    const isLarge = photo.size === 'large' || i === 0;
+    const div = document.createElement('div');
+    div.className = `${isLarge ? 'col-span-2 row-span-2' : 'col-span-1'} gallery-item rounded-2xl overflow-hidden cursor-pointer group relative`;
+    div.dataset.src = src;
+    div.innerHTML = `
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="${src}" alt="${photo.caption || 'Property photo'}" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
+      </div>`;
+    grid.appendChild(div);
+  });
+
+  rebindLightbox();
+}
+
+/* ============================================================
+   RENDERERS
+   ============================================================ */
+function renderAmenityChips(amenities) {
+  const el = document.getElementById('amenity-chips');
+  if (!el) return;
+  el.innerHTML = amenities.map(a => `
+    <div class="flex items-center gap-3 bg-white rounded-xl p-4 border border-outline/10
+                hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 cursor-default">
+      <span class="material-symbols-outlined text-secondary">${a.icon || 'check_circle'}</span>
+      <span class="font-label-md text-on-surface">${a.name}</span>
+      ${a.highlight ? '<span class="ml-auto w-2 h-2 rounded-full bg-secondary flex-shrink-0"></span>' : ''}
+    </div>`).join('');
+}
+
+function renderNearby(nearby) {
+  const el = document.getElementById('nearby-list');
+  if (!el) return;
+  el.innerHTML = nearby.map(n => `
+    <li class="flex items-center gap-3 text-on-primary-container">
+      <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">${n.icon || 'place'}</span>
+      ${n.text}
+    </li>`).join('');
+}
+
+function renderReviews(reviews) {
+  const el = document.getElementById('slider');
+  if (!el) return;
+  el.innerHTML = reviews.map(r => {
+    const stars = Array.from({ length: r.rating || 5 }, () =>
+      `<span class="material-symbols-outlined star-filled">star</span>`).join('');
+    const initial = (r.guestName || 'G').charAt(0).toUpperCase();
+    return `
+      <article class="min-w-[300px] md:min-w-[450px] bg-white p-10 rounded-2xl shadow-sm border border-outline/5 flex-shrink-0
+                      hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+        <div class="flex text-secondary mb-6" aria-label="${r.rating || 5} stars out of 5">${stars}</div>
+        <p class="font-body-lg text-body-lg italic text-primary mb-8">"${r.text}"</p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center
+                      font-headline-sm text-primary text-lg flex-shrink-0">${initial}</div>
+          <div>
+            <p class="font-label-md text-primary">${r.guestName}</p>
+            <p class="text-label-sm text-outline">${r.location ? r.location + ' · ' : ''}${r.date}</p>
+          </div>
+        </div>
+      </article>`;
+  }).join('');
+}
+
+/* ============================================================
+   CALENDAR
+   ============================================================ */
+const MONTH_NAMES = ['January','February','March','April','May','June',
+                     'July','August','September','October','November','December'];
+const DAY_ABBR    = ['S','M','T','W','T','F','S'];
+let   calOffset   = 0;
+
+function yyyymmdd(y, m, d) {
+  return `${y}${String(m + 1).padStart(2,'0')}${String(d).padStart(2,'0')}`;
+}
+function isBlocked(str) {
+  return (window._blockedRanges || []).some(r => str >= r.start && str < r.end);
+}
+
+function buildMonth(year, month) {
+  const today    = new Date();
+  const todayStr = yyyymmdd(today.getFullYear(), today.getMonth(), today.getDate());
+  const firstDay = new Date(year, month, 1).getDay();
+  const days     = new Date(year, month + 1, 0).getDate();
+  const prevDays = new Date(year, month, 0).getDate();
+
+  let html = '<div class="grid grid-cols-7 gap-1 text-center">';
+  DAY_ABBR.forEach(d => {
+    html += `<div class="text-label-sm text-outline py-2 font-bold">${d}</div>`;
+  });
+  for (let i = 0; i < firstDay; i++) {
+    html += `<div class="cal-day other-month">${prevDays - firstDay + i + 1}</div>`;
+  }
+  for (let d = 1; d <= days; d++) {
+    const str = yyyymmdd(year, month, d);
+    let cls = 'cal-day';
+    if (str < todayStr)      cls += ' past';
+    else if (isBlocked(str)) cls += ' booked';
+    else                     cls += ' available';
+    if (str === todayStr)    cls += ' today';
+    const mark = cls.includes('available') ? '<span class="cal-mark">✓</span>'
+               : cls.includes('booked')    ? '<span class="cal-mark">✗</span>'
+               : '';
+    html += `<div class="${cls}"><span>${d}</span>${mark}</div>`;
+  }
+  const trailing = (7 - ((firstDay + days) % 7)) % 7;
+  for (let i = 1; i <= trailing; i++) {
+    html += `<div class="cal-day other-month">${i}</div>`;
+  }
+  return html + '</div>';
+}
+
+function renderCalendars() {
+  const now  = new Date();
+  const base = new Date(now.getFullYear(), now.getMonth() + calOffset);
+  const next = new Date(base.getFullYear(), base.getMonth() + 1);
+
+  const label1 = document.getElementById('cal-label-1');
+  const label2 = document.getElementById('cal-label-2');
+  const grid1  = document.getElementById('cal-grid-1');
+  const grid2  = document.getElementById('cal-grid-2');
+
+  if (label1) label1.textContent = `${MONTH_NAMES[base.getMonth()]} ${base.getFullYear()}`;
+  if (label2) label2.textContent = `${MONTH_NAMES[next.getMonth()]} ${next.getFullYear()}`;
+  if (grid1)  grid1.innerHTML    = buildMonth(base.getFullYear(), base.getMonth());
+  if (grid2)  grid2.innerHTML    = buildMonth(next.getFullYear(), next.getMonth());
+}
+
+document.getElementById('cal-prev')?.addEventListener('click', () => { calOffset--; renderCalendars(); });
+document.getElementById('cal-next')?.addEventListener('click', () => { calOffset++; renderCalendars(); });
+
+/* ============================================================
+   GALLERY LIGHTBOX
+   ============================================================ */
+function rebindLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  const lbImg    = document.getElementById('lb-img');
+  if (!lightbox || !lbImg) return;
+
+  let current = 0;
+  const items = () => Array.from(document.querySelectorAll('.gallery-item'));
+
+  const open  = i => { current = i; lbImg.src = items()[current]?.dataset.src ?? ''; lightbox.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const close = () => { lightbox.classList.remove('open'); document.body.style.overflow = ''; };
+  const nav   = dir => { const a = items(); current = (current + dir + a.length) % a.length; lbImg.src = a[current]?.dataset.src ?? ''; };
+
+  document.querySelectorAll('.gallery-item').forEach((el, i) => el.addEventListener('click', () => open(i)));
+  document.getElementById('lb-close')?.addEventListener('click', close);
+  document.getElementById('lb-prev')?.addEventListener('click', () => nav(-1));
+  document.getElementById('lb-next')?.addEventListener('click', () => nav(1));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  nav(-1);
+    if (e.key === 'ArrowRight') nav(1);
+  });
+}
+
+/* ============================================================
+   INQUIRY FORM — mailto fallback + success message
+   ============================================================ */
+document.getElementById('inquiry-form')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const data  = new FormData(this);
+  const name  = data.get('name')    || '';
+  const email = data.get('email')   || '';
+  const ci    = data.get('checkin') || '';
+  const co    = data.get('checkout')|| '';
+  const guests= data.get('guests')  || '';
+  const msg   = data.get('message') || '';
+
+  const body = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\nCheck-in: ${ci}\nCheck-out: ${co}\nGuests: ${guests}\n\n${msg}`
+  );
+  window.open(`mailto:saihemanth@gmail.com?subject=Shenandoah Retreat Inquiry&body=${body}`, '_blank');
+
+  this.reset();
+  const success = document.getElementById('form-success');
+  if (success) { success.classList.remove('hidden'); setTimeout(() => success.classList.add('hidden'), 6000); }
+});
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+const mobileMenu  = document.getElementById('mobile-menu');
+const menuOverlay = document.getElementById('menu-overlay');
+const openMenu    = () => { mobileMenu?.classList.add('open'); menuOverlay?.classList.remove('hidden'); document.body.style.overflow = 'hidden'; };
+const closeMenu   = () => { mobileMenu?.classList.remove('open'); menuOverlay?.classList.add('hidden'); document.body.style.overflow = ''; };
+
+document.getElementById('menu-btn')?.addEventListener('click', openMenu);
+document.getElementById('close-menu')?.addEventListener('click', closeMenu);
+menuOverlay?.addEventListener('click', closeMenu);
+document.querySelectorAll('.mobile-nav').forEach(l => l.addEventListener('click', closeMenu));
+
+/* ============================================================
+   NAV: shadow + active section highlighting
+   ============================================================ */
+const mainNav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  mainNav?.classList.toggle('shadow-md', window.scrollY > 8);
+}, { passive: true });
+
+const navLinks = document.querySelectorAll('.nav-link');
+document.querySelectorAll('section[id]').forEach(s =>
+  new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach(link => {
+        const active = link.getAttribute('href') === `#${entry.target.id}`;
+        link.classList.toggle('active', active);
+        link.classList.toggle('text-on-surface-variant', !active);
+      });
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' }).observe(s)
+);
+
+/* ============================================================
+   SCROLL-TRIGGERED FADE-UP ANIMATIONS
+   ============================================================ */
+const animObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    animObserver.unobserve(entry.target);
+  });
+}, { rootMargin: '0px 0px -80px 0px', threshold: 0.05 });
+
+document.querySelectorAll('.fade-up:not(.hero-anim)').forEach(el => animObserver.observe(el));
+
+/* ============================================================
+   SCROLL PROGRESS BAR
+   ============================================================ */
+(function () {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+  window.addEventListener('scroll', () => {
+    const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+    bar.style.width = Math.min(pct, 100) + '%';
+  }, { passive: true });
+})();
+
+
+/* ============================================================
+   HERO SLIDESHOW
+   ============================================================ */
+(function () {
+  const LABELS = ['Fire Pit', 'Private Hot Tub', 'Living Room', 'Nearby Lake'];
+  const slides = Array.from(document.querySelectorAll('.hero-slide'));
+  const dots   = Array.from(document.querySelectorAll('.hero-dot'));
+  const label  = document.getElementById('hero-label');
+  if (!slides.length) return;
+
+  let current = 0;
+  let timer;
+  let paused  = false;
+
+  function setLabel(text) {
+    if (!label) return;
+    label.style.opacity = '0';
+    label.style.transform = 'translateY(8px)';
+    setTimeout(() => {
+      label.textContent = text;
+      label.style.opacity = '1';
+      label.style.transform = 'translateY(0)';
+    }, 400);
+  }
+
+  function restartKenBurns(slide) {
+    const img = slide.querySelector('.hero-slide-img');
+    if (!img) return;
+    img.style.animation = 'none';
+    img.offsetWidth; // force reflow
+    img.style.animation = '';
+  }
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current]?.classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    restartKenBurns(slides[current]);
+    slides[current].classList.add('active');
+    dots[current]?.classList.add('active');
+    setLabel(LABELS[current]);
+  }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => { if (!paused) goTo(current + 1); }, 5800);
+  }
+
+  dots.forEach((dot, i) => dot.addEventListener('click', () => { goTo(i); startTimer(); }));
+  document.getElementById('hero-prev')?.addEventListener('click', () => { goTo(current - 1); startTimer(); });
+  document.getElementById('hero-next')?.addEventListener('click', () => { goTo(current + 1); startTimer(); });
+
+  const hero = document.getElementById('hero');
+  hero?.addEventListener('mouseenter', () => { paused = true; });
+  hero?.addEventListener('mouseleave', () => { paused = false; });
+
+  // Touch / swipe support
+  let touchStartX = 0;
+  hero?.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  hero?.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) { goTo(dx < 0 ? current + 1 : current - 1); startTimer(); }
+  }, { passive: true });
+
+  // Show label for first slide after hero text animates in
+  setTimeout(() => setLabel(LABELS[0]), 600);
+  startTimer();
+})();
+
+/* ============================================================
+   HERO PARALLAX
+   ============================================================ */
+let rafPending = false;
+window.addEventListener('scroll', () => {
+  if (rafPending) return;
+  rafPending = true;
+  requestAnimationFrame(() => {
+    const slidesEl = document.getElementById('hero-slides');
+    if (slidesEl) slidesEl.style.transform = `translateY(${window.scrollY * 0.12}px)`;
+    rafPending = false;
+  });
+}, { passive: true });
+
+/* ============================================================
+   HERO TEXT: staggered entrance on load
+   ============================================================ */
+document.querySelectorAll('.hero-anim').forEach((el, i) => {
+  setTimeout(() => el.classList.add('visible'), 150 + i * 120);
+});
+
+/* ============================================================
+   INIT — render fallbacks immediately, then overlay CMS data
+   ============================================================ */
+window._blockedRanges = FALLBACK.blockedRanges;
+
+renderAmenityChips(FALLBACK.amenities);
+renderReviews(FALLBACK.reviews);
+renderCalendars();
+rebindLightbox();
+
+if (SANITY_PROJECT_ID !== 'YOUR_PROJECT_ID') {
+  Promise.all([
+    fetchProperty(),
+    fetchReviews(),
+    fetchBlockedDates(),
+    fetchGallery(),
+  ]).catch(() => {});
+}
+</script>
+</body>
+</html>
