@@ -237,6 +237,41 @@
       transition: width 0.08s linear;
     }
 
+    /* ── Transparent nav (blended into hero on load) ── */
+    #main-nav {
+      transition: background-color 0.45s ease,
+                  backdrop-filter 0.45s ease,
+                  -webkit-backdrop-filter 0.45s ease,
+                  border-color 0.45s ease,
+                  box-shadow 0.3s ease;
+    }
+    #main-nav.nav-transparent {
+      background-color: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border-bottom-color: transparent !important;
+      box-shadow: none !important;
+    }
+    #main-nav.nav-transparent .nav-logo { color: white; }
+    #main-nav.nav-transparent .nav-link { color: rgba(255,255,255,0.82); }
+    #main-nav.nav-transparent .nav-link:hover { color: white; }
+    #main-nav.nav-transparent .nav-link::after { background: white; }
+    #main-nav.nav-transparent .nav-link.active { color: white; }
+    #main-nav.nav-transparent .nav-book-btn {
+      background: rgba(255,255,255,0.15) !important;
+      color: white !important;
+      border: 1.5px solid rgba(255,255,255,0.5);
+    }
+    #main-nav.nav-transparent .nav-book-btn:hover {
+      background: rgba(255,255,255,0.25) !important;
+    }
+    #main-nav.nav-transparent #menu-btn {
+      color: white;
+    }
+    #main-nav.nav-transparent #menu-btn:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
   </style>
 </head>
 
@@ -244,9 +279,9 @@
 <div id="scroll-progress" aria-hidden="true"></div>
 
 <!-- ══════════════════════════════════════════════════════ NAVIGATION -->
-<nav id="main-nav" class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 border-b border-outline/10 transition-shadow duration-300">
+<nav id="main-nav" class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 border-b border-outline/10 nav-transparent">
   <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-3 md:py-4 max-w-max-width mx-auto">
-    <a href="#" class="text-[15px] md:text-headline-sm font-headline-sm text-primary tracking-tight hover:opacity-75 transition-opacity">
+    <a href="#" class="nav-logo text-[15px] md:text-headline-sm font-headline-sm text-primary tracking-tight transition-colors duration-300">
       Shenandoah Retreat
     </a>
     <div class="hidden md:flex items-center gap-8">
@@ -258,7 +293,7 @@
     </div>
     <div class="flex items-center gap-2">
       <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
-         class="hidden md:inline-flex bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">
+         class="nav-book-btn hidden md:inline-flex bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">
         Book Now
       </a>
       <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-surface-container transition-colors" aria-label="Open navigation menu">
@@ -1407,7 +1442,9 @@ document.querySelectorAll('.mobile-nav').forEach(l => l.addEventListener('click'
    ============================================================ */
 const mainNav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
-  mainNav?.classList.toggle('shadow-md', window.scrollY > 8);
+  const scrolled = window.scrollY > 80;
+  mainNav?.classList.toggle('shadow-md', scrolled);
+  mainNav?.classList.toggle('nav-transparent', !scrolled);
 }, { passive: true });
 
 const navLinks = document.querySelectorAll('.nav-link');
