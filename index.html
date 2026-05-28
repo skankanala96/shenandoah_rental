@@ -237,6 +237,15 @@
       transition: width 0.08s linear;
     }
 
+    /* ── Nav logo highlight ── */
+    .nav-logo span {
+      background-image: linear-gradient(to right, #fec489, #805524);
+      background-size: 100% 2px;
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      padding-bottom: 1px;
+    }
+
     /* ── Transparent nav (blended into hero on load) ── */
     #main-nav {
       transition: background-color 0.45s ease,
@@ -254,7 +263,12 @@
     }
     #main-nav.nav-transparent .nav-logo {
       color: white;
+    }
+    #main-nav.nav-transparent .nav-logo span {
       text-shadow: 0 1px 10px rgba(0,0,0,0.65), 0 2px 4px rgba(0,0,0,0.4);
+    }
+    #main-nav.nav-transparent .nav-logo svg {
+      filter: drop-shadow(0 1px 6px rgba(0,0,0,0.5));
     }
     #main-nav.nav-transparent .nav-link {
       color: rgba(255,255,255,0.88);
@@ -289,8 +303,21 @@
 <!-- ══════════════════════════════════════════════════════ NAVIGATION -->
 <nav id="main-nav" class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 border-b border-outline/10 nav-transparent">
   <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-3 md:py-4 max-w-max-width mx-auto">
-    <a href="#" class="nav-logo text-[17px] md:text-headline-sm font-headline-sm text-primary tracking-tight transition-colors duration-300">
-      Shenandoah Retreat
+    <a href="#" class="nav-logo flex items-center gap-2.5 text-primary tracking-tight transition-colors duration-300">
+      <!-- Logo mark: mountains + star (Daughter of the Stars) + river wave -->
+      <svg width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="flex-shrink-0">
+        <!-- Back mountain (faded) -->
+        <path d="M1 25 L10 6 L19 25Z" fill="currentColor" fill-opacity="0.35"/>
+        <!-- Front mountain -->
+        <path d="M11 25 L22 2 L33 25Z" fill="currentColor"/>
+        <!-- Star accent – "Daughter of the Stars" -->
+        <circle cx="4.5" cy="12" r="2.4" fill="#fec489"/>
+        <circle cx="4.5" cy="12" r="1" fill="white" fill-opacity="0.7"/>
+        <!-- River wave -->
+        <path d="M1 28 Q6 25.5 11 28 Q16 30.5 21 28 Q26 25.5 31 28"
+              stroke="#fec489" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      </svg>
+      <span class="text-[17px] md:text-headline-sm font-headline-sm leading-none">Shenandoah Retreat</span>
     </a>
     <div class="hidden md:flex items-center gap-8">
       <a href="#about"        class="nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">The Home</a>
