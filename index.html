@@ -252,8 +252,14 @@
       border-bottom-color: transparent !important;
       box-shadow: none !important;
     }
-    #main-nav.nav-transparent .nav-logo { color: white; }
-    #main-nav.nav-transparent .nav-link { color: rgba(255,255,255,0.82); }
+    #main-nav.nav-transparent .nav-logo {
+      color: white;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.65), 0 2px 4px rgba(0,0,0,0.4);
+    }
+    #main-nav.nav-transparent .nav-link {
+      color: rgba(255,255,255,0.88);
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    }
     #main-nav.nav-transparent .nav-link:hover { color: white; }
     #main-nav.nav-transparent .nav-link::after { background: white; }
     #main-nav.nav-transparent .nav-link.active { color: white; }
@@ -267,9 +273,11 @@
     }
     #main-nav.nav-transparent #menu-btn {
       color: white;
+      filter: drop-shadow(0 1px 4px rgba(0,0,0,0.55));
     }
     #main-nav.nav-transparent #menu-btn:hover {
       background: rgba(255,255,255,0.15);
+      filter: none;
     }
 
   </style>
@@ -281,7 +289,7 @@
 <!-- ══════════════════════════════════════════════════════ NAVIGATION -->
 <nav id="main-nav" class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 border-b border-outline/10 nav-transparent">
   <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-3 md:py-4 max-w-max-width mx-auto">
-    <a href="#" class="nav-logo text-[15px] md:text-headline-sm font-headline-sm text-primary tracking-tight transition-colors duration-300">
+    <a href="#" class="nav-logo text-[17px] md:text-headline-sm font-headline-sm text-primary tracking-tight transition-colors duration-300">
       Shenandoah Retreat
     </a>
     <div class="hidden md:flex items-center gap-8">
