@@ -379,13 +379,14 @@
     </div>
   </div>
 
-  <!-- Gradient overlay -->
-  <div class="absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-black/25 to-black/5 pointer-events-none"></div>
+  <!-- Gradient overlay: concentrated at bottom so image stays vivid -->
+  <div class="absolute inset-0 z-[1] pointer-events-none"
+       style="background: linear-gradient(to top, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.28) 38%, rgba(0,0,0,0.04) 72%, transparent 100%);"></div>
 
   <!-- Slide label badge -->
   <div id="hero-label" class="absolute top-8 right-8 z-[3] bg-black/35 backdrop-blur-sm text-white/80 text-xs font-medium tracking-widest uppercase px-4 py-1.5 rounded-full
                                opacity-0 transition-all duration-500 translate-y-2 pointer-events-none">
-    Fire Pit
+    Valley View
   </div>
 
   <!-- Prev / Next arrows (desktop) -->
@@ -403,15 +404,15 @@
   </button>
 
   <!-- Content -->
-  <div class="relative z-[2] text-white px-margin-mobile md:px-margin-desktop pb-10 md:pb-28 max-w-max-width w-full mx-auto">
-    <p class="font-label-md uppercase tracking-widest text-secondary-fixed mb-2 md:mb-4 fade-up hero-anim text-[11px] md:text-label-md">
-      Shenandoah Valley, Virginia
+  <div class="relative z-[2] text-white px-margin-mobile md:px-margin-desktop pb-12 md:pb-28 max-w-max-width w-full mx-auto">
+    <p class="font-label-md uppercase tracking-[0.18em] text-white/70 mb-3 md:mb-4 fade-up hero-anim text-[11px] md:text-[12px]">
+      Your Front Door to the Wild
     </p>
-    <h1 class="font-headline-lg text-[22px] md:text-headline-lg mb-3 md:mb-5 leading-tight drop-shadow-sm max-w-3xl fade-up d1 hero-anim">
-      Cozy Log Cabin Near<br class="hidden md:block" /> the Shenandoah River
+    <h1 class="font-headline-lg text-[28px] md:text-[52px] mb-4 md:mb-5 leading-[1.1] drop-shadow-md max-w-2xl fade-up d1 hero-anim">
+      Discover the Heart of the<br class="hidden md:block" /> Shenandoah Valley
     </h1>
-    <p class="text-[14px] md:text-body-lg mb-6 md:mb-10 opacity-90 max-w-lg fade-up d2 hero-anim leading-relaxed">
-      Pet-friendly retreat with private hot tub, game room, kayak, and fire pit — minutes from the river, wineries, and hiking trails.
+    <p class="text-[14px] md:text-[17px] mb-7 md:mb-10 opacity-85 max-w-md fade-up d2 hero-anim leading-relaxed font-light">
+      Located just 8 minutes from the Thornton Gap entrance to Skyline Drive, our retreat serves as the ultimate basecamp for mountain adventures.
     </p>
     <div class="flex flex-wrap gap-3 fade-up d3 hero-anim">
       <a href="#availability"
