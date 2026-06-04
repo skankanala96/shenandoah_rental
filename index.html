@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cozy log cabin near the Shenandoah River — private hot tub, game room, kayak, fire pit, pet-friendly. 3 bedrooms, 3 levels, minutes from wineries and hiking." />
-  <meta property="og:title" content="Cozy Retreat near Shenandoah River | Hot Tub · Wineries" />
-  <meta property="og:description" content="Pet-friendly log cabin in the heart of the Shenandoah Valley. Private hot tub, game room, kayak, fire pit — minutes from the river, wineries, and hiking." />
+  <meta name="description" content="The Foxhole Cabin — a cozy log cabin near the Shenandoah River. Luxury salt water hot tub, game room, kayak, pet-friendly. 3 bedrooms, 3 levels, minutes from wineries and hiking." />
+  <meta property="og:title" content="The Foxhole Cabin | Shenandoah Valley Cabin · Hot Tub · Wineries" />
+  <meta property="og:description" content="The Foxhole Cabin — pet-friendly log cabin in the heart of the Shenandoah Valley. Luxury salt water hot tub, game room, kayak — minutes from the river, wineries, and hiking." />
   <meta property="og:type" content="website" />
-  <title>Cozy Retreat near Shenandoah River | Hot Tub · Wineries</title>
+  <title>The Foxhole Cabin | Shenandoah Valley Cabin · Hot Tub · Wineries</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
@@ -267,7 +268,7 @@
     #main-nav.nav-transparent .nav-logo span {
       text-shadow: 0 1px 10px rgba(0,0,0,0.65), 0 2px 4px rgba(0,0,0,0.4);
     }
-    #main-nav.nav-transparent .nav-logo svg {
+    #main-nav.nav-transparent .nav-logo img {
       filter: drop-shadow(0 1px 6px rgba(0,0,0,0.5));
     }
     #main-nav.nav-transparent .nav-link {
@@ -304,20 +305,9 @@
 <nav id="main-nav" class="fixed top-0 w-full bg-surface/90 backdrop-blur-md z-50 border-b border-outline/10 nav-transparent">
   <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-3 md:py-4 max-w-max-width mx-auto">
     <a href="#" class="nav-logo flex items-center gap-2.5 text-primary tracking-tight transition-colors duration-300">
-      <!-- Logo mark: mountains + star (Daughter of the Stars) + river wave -->
-      <svg width="34" height="30" viewBox="0 0 34 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="flex-shrink-0">
-        <!-- Back mountain (faded) -->
-        <path d="M1 25 L10 6 L19 25Z" fill="currentColor" fill-opacity="0.35"/>
-        <!-- Front mountain -->
-        <path d="M11 25 L22 2 L33 25Z" fill="currentColor"/>
-        <!-- Star accent – "Daughter of the Stars" -->
-        <circle cx="4.5" cy="12" r="2.4" fill="#fec489"/>
-        <circle cx="4.5" cy="12" r="1" fill="white" fill-opacity="0.7"/>
-        <!-- River wave -->
-        <path d="M1 28 Q6 25.5 11 28 Q16 30.5 21 28 Q26 25.5 31 28"
-              stroke="#fec489" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-      </svg>
-      <span class="text-[17px] md:text-headline-sm font-headline-sm leading-none">Shenandoah Retreat</span>
+      <img src="photos/logo.jpg" alt="The Foxhole Cabin fox logo" aria-hidden="true"
+           class="flex-shrink-0 w-9 h-9 rounded-lg object-cover shadow-sm" />
+      <span class="text-[17px] md:text-headline-sm font-headline-sm leading-none">The Foxhole Cabin</span>
     </a>
     <div class="hidden md:flex items-center gap-8">
       <a href="#about"        class="nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">The Home</a>
@@ -361,13 +351,9 @@
 
   <!-- Slides -->
   <div id="hero-slides" class="absolute inset-0 z-0">
-    <div class="hero-slide active" data-kb="a">
-      <img class="hero-slide-img" src="photos/firepit_exterior.avif"
-           alt="Outdoor fire pit at the cabin" loading="eager" fetchpriority="high" />
-    </div>
-    <div class="hero-slide" data-kb="b">
+    <div class="hero-slide active" data-kb="b">
       <img class="hero-slide-img" src="photos/hotTub.avif"
-           alt="Private hot tub on the rear deck" loading="lazy" />
+           alt="Luxury salt water hot tub on the rear deck" loading="eager" fetchpriority="high" />
     </div>
     <div class="hero-slide" data-kb="c">
       <img class="hero-slide-img" src="photos/Living_room_main.avif"
@@ -412,7 +398,7 @@
       Discover the Heart of the<br class="hidden md:block" /> Shenandoah Valley
     </h1>
     <p class="text-[14px] md:text-[17px] mb-7 md:mb-10 opacity-85 max-w-md fade-up d2 hero-anim leading-relaxed font-light">
-      Located just 8 minutes from the Thornton Gap entrance to Skyline Drive, our retreat serves as the ultimate basecamp for mountain adventures.
+      Located just 8 minutes from the Front Royal entrance to Skyline Drive, our retreat serves as the ultimate basecamp for mountain adventures.
     </p>
     <div class="flex flex-wrap gap-3 fade-up d3 hero-anim">
       <a href="#availability"
@@ -428,10 +414,9 @@
 
   <!-- Dot indicators -->
   <div id="hero-dots" class="absolute bottom-7 left-1/2 -translate-x-1/2 z-[3] flex gap-2.5 items-center">
-    <button class="hero-dot active" data-index="0" aria-label="Photo 1: Fire pit"></button>
-    <button class="hero-dot"        data-index="1" aria-label="Photo 2: Hot tub"></button>
-    <button class="hero-dot"        data-index="2" aria-label="Photo 3: Living room"></button>
-    <button class="hero-dot"        data-index="3" aria-label="Photo 4: Nearby lake"></button>
+    <button class="hero-dot active" data-index="0" aria-label="Photo 1: Hot tub"></button>
+    <button class="hero-dot"        data-index="1" aria-label="Photo 2: Living room"></button>
+    <button class="hero-dot"        data-index="2" aria-label="Photo 3: Nearby lake"></button>
   </div>
 
 </section>
@@ -443,7 +428,7 @@
 
     <div class="space-y-5">
       <div class="inline-block px-3 py-1 bg-primary-fixed text-on-primary-fixed-variant rounded-full text-label-sm uppercase tracking-widest fade-up">
-        Your Valley Retreat
+        Your Foxhole Escape
       </div>
       <h2 class="font-headline-md text-[22px] md:text-headline-md text-primary fade-up d1">
         A cozy log cabin where every detail invites you to slow down.
@@ -453,7 +438,7 @@
           Pet-friendly log cabin in the heart of the Shenandoah Valley — perfect for relaxing getaways or adventure-filled weekends. Enjoy a private hot tub under the stars, game room, and multiple cozy living spaces for families and groups.
         </p>
         <p class="text-[15px] md:text-body-lg text-on-surface-variant">
-          New, fully furnished with 3 bedrooms, 2.5 bathrooms, and 3 finished levels of thoughtfully designed space — from the loft lounge with daybed to the lower-level game area and the primary suite featuring heated floors and a rain-head walk-in shower.
+          New, fully furnished with 3 bedrooms, 2.5 bathrooms, and 3 finished levels of thoughtfully designed space — from the loft lounge with daybed to the lower-level game area, with heated floors throughout the main floor and basement, plus a rain-head walk-in shower in the primary suite.
         </p>
       </div>
 
@@ -506,7 +491,7 @@
       <div class="flex flex-col items-center justify-center py-5 gap-1.5 fade-up d1">
         <span class="material-symbols-outlined text-secondary text-3xl">bathtub</span>
         <p class="font-headline-sm text-[16px] md:text-headline-sm text-primary">2.5 Baths</p>
-        <p class="text-label-sm text-outline uppercase tracking-widest">Rain shower + heated floors</p>
+        <p class="text-label-sm text-outline uppercase tracking-widest">Rain shower + heated floors (main & basement)</p>
       </div>
       <div class="flex flex-col items-center justify-center py-5 gap-1.5 fade-up d2">
         <span class="material-symbols-outlined text-secondary text-3xl">stairs</span>
@@ -515,8 +500,8 @@
       </div>
       <div class="flex flex-col items-center justify-center py-5 gap-1.5 fade-up d3">
         <span class="material-symbols-outlined text-secondary text-3xl">hot_tub</span>
-        <p class="font-headline-sm text-[16px] md:text-headline-sm text-primary">Hot Tub + Fire Pit</p>
-        <p class="text-label-sm text-outline uppercase tracking-widest">Open year-round</p>
+        <p class="font-headline-sm text-[16px] md:text-headline-sm text-primary">Salt Water Hot Tub</p>
+        <p class="text-label-sm text-outline uppercase tracking-widest">Luxury · Chemical-light · Year-round</p>
       </div>
     </div>
   </div>
@@ -549,6 +534,10 @@
             <span class="material-symbols-outlined text-xl text-secondary">king_bed</span>
             1 Queen Bed
           </div>
+          <div class="flex items-center gap-3 text-on-surface-variant font-body-md">
+            <span class="material-symbols-outlined text-xl text-secondary">bathtub</span>
+            Private Master Bath
+          </div>
         </div>
       </div>
     </div>
@@ -556,18 +545,22 @@
     <!-- Bedroom 2 -->
     <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-outline/10 hover:shadow-md hover:-translate-y-1 transition-all duration-300 fade-up d1">
       <div class="relative">
-        <img src="photos/bedroom2.avif" alt="Second bedroom"
+        <img src="photos/bedroom2.avif" alt="Loft guest room"
              class="w-full h-56 object-cover" />
         <div class="absolute top-4 left-4 bg-primary/75 backdrop-blur-sm text-on-primary font-label-sm uppercase tracking-widest px-3 py-1.5 rounded-full">
           Bedroom 2
         </div>
       </div>
       <div class="p-6">
-        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Guest Room</h3>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Loft Guest Room</h3>
         <div class="space-y-3">
           <div class="flex items-center gap-3 text-on-surface-variant font-body-md">
             <span class="material-symbols-outlined text-xl text-secondary">king_bed</span>
             1 Queen Bed
+          </div>
+          <div class="flex items-center gap-3 text-on-surface-variant font-body-md">
+            <span class="material-symbols-outlined text-xl text-secondary">bathtub</span>
+            Ensuite Half Bath
           </div>
         </div>
       </div>
@@ -576,18 +569,22 @@
     <!-- Bedroom 3 -->
     <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-outline/10 hover:shadow-md hover:-translate-y-1 transition-all duration-300 fade-up d2">
       <div class="relative">
-        <img src="photos/bedroom3.avif" alt="Third bedroom"
+        <img src="photos/bedroom3.avif" alt="Basement bedroom"
              class="w-full h-56 object-cover" />
         <div class="absolute top-4 left-4 bg-primary/75 backdrop-blur-sm text-on-primary font-label-sm uppercase tracking-widest px-3 py-1.5 rounded-full">
           Bedroom 3
         </div>
       </div>
       <div class="p-6">
-        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Cozy Room</h3>
+        <h3 class="font-headline-sm text-headline-sm text-primary mb-2">Basement Bedroom</h3>
         <div class="space-y-3">
           <div class="flex items-center gap-3 text-on-surface-variant font-body-md">
             <span class="material-symbols-outlined text-xl text-secondary">king_bed</span>
             1 Queen Bed
+          </div>
+          <div class="flex items-center gap-3 text-on-surface-variant font-body-md">
+            <span class="material-symbols-outlined text-xl text-secondary">bathtub</span>
+            Full Bath
           </div>
         </div>
       </div>
@@ -770,12 +767,12 @@
             <span class="material-symbols-outlined">hot_tub</span>
             <span class="font-label-sm uppercase tracking-widest">Outdoor</span>
           </div>
-          <h4 class="font-headline-sm text-headline-sm">Private Hot Tub</h4>
-          <p class="text-sm opacity-75 mt-1 max-w-xs">Soak under the stars on the rear deck — open year-round</p>
+          <h4 class="font-headline-sm text-headline-sm">Luxury Salt Water Hot Tub</h4>
+          <p class="text-sm opacity-75 mt-1 max-w-xs">Salt water system maximizes cleanliness and minimizes chemicals. Open year-round on the rear deck.</p>
         </div>
       </div>
 
-      <!-- Patio / Deck / Fire Pit — right, same tall height -->
+      <!-- Patio / Deck — right, same tall height -->
       <div class="relative rounded-2xl overflow-hidden group h-72 md:h-[520px] fade-up d1">
         <img src="photos/patio_v2.avif"
              alt="Porch and deck with outdoor seating"
@@ -786,8 +783,8 @@
             <span class="material-symbols-outlined">deck</span>
             <span class="font-label-sm uppercase tracking-widest">Outdoor Living</span>
           </div>
-          <h4 class="font-headline-sm text-headline-sm">Porch, Deck & Fire Pit</h4>
-          <p class="text-sm opacity-75 mt-1 max-w-xs">Front porch seating, rear deck, and fire pit — all yours</p>
+          <h4 class="font-headline-sm text-headline-sm">Porch & Deck</h4>
+          <p class="text-sm opacity-75 mt-1 max-w-xs">Front porch seating and rear deck — all yours</p>
         </div>
       </div>
 
@@ -824,15 +821,53 @@
 <!-- ══════════════════════════════════════════════════════ AREA GUIDE -->
 <section class="py-10 md:py-14 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
   <div class="bg-primary text-on-primary rounded-3xl overflow-hidden flex flex-col md:flex-row">
+
+    <!-- Left: text + lists -->
     <div class="flex-1 p-8 md:p-12 space-y-5">
       <span class="font-label-md uppercase tracking-widest text-secondary-fixed">Local Knowledge</span>
       <h2 class="font-headline-lg text-[22px] md:text-[40px] leading-tight fade-up">
         Explore the Best of the Shenandoah Valley
       </h2>
       <p class="font-body-lg text-on-primary-container fade-up d1">
-        From paddling the river out front to sipping at Valley wineries and hiking the Appalachian Trail — there's something for every pace.
+        From paddling the river out front to touring award-winning Valley wineries and hiking the Appalachian Trail — there's something for every pace.
       </p>
+
+      <!-- Wine country callout -->
+      <div class="bg-white/10 rounded-2xl p-4 fade-up d1">
+        <p class="font-label-sm uppercase tracking-widest text-secondary-fixed mb-3">Wine Country &amp; Craft Beer</p>
+        <div class="space-y-2.5">
+          <div class="flex items-center justify-between text-on-primary-container">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">wine_bar</span>
+              Delaplane Cellars
+            </div>
+            <span class="text-secondary-fixed text-sm font-medium ml-4 flex-shrink-0">~40 min</span>
+          </div>
+          <div class="flex items-center justify-between text-on-primary-container">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">wine_bar</span>
+              Fox Meadow Winery
+            </div>
+            <span class="text-secondary-fixed text-sm font-medium ml-4 flex-shrink-0">~20 min</span>
+          </div>
+          <div class="flex items-center justify-between text-on-primary-container">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">sports_bar</span>
+              Bear Chase Brewing
+            </div>
+            <span class="text-secondary-fixed text-sm font-medium ml-4 flex-shrink-0">~50 min</span>
+          </div>
+        </div>
+      </div>
+
       <ul id="nearby-list" class="space-y-3 fade-up d2">
+        <li class="flex items-center justify-between text-on-primary-container">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">terrain</span>
+            Shenandoah National Park / Skyline Drive
+          </div>
+          <span class="text-secondary-fixed text-sm font-medium ml-4 flex-shrink-0">8 min drive</span>
+        </li>
         <li class="flex items-center justify-between text-on-primary-container">
           <div class="flex items-center gap-3">
             <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">park</span>
@@ -868,17 +903,26 @@
           </div>
           <span class="text-secondary-fixed text-sm font-medium ml-4 flex-shrink-0">14 min drive</span>
         </li>
+        <li class="flex items-center justify-between text-on-primary-container">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">hiking</span>
+            Appalachian Trail — Ashby Gap
+          </div>
+          <span class="text-secondary-fixed text-sm font-medium ml-4 flex-shrink-0">~35 min drive</span>
+        </li>
       </ul>
+
       <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
          class="inline-block bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-md hover:brightness-110 transition-all fade-up d3">
         View Full Listing
       </a>
     </div>
-    <div class="flex-1 relative min-h-[300px]">
-      <img src="photos/nearby_lake.avif"
-           alt="Nearby lake and Shenandoah Valley scenery"
-           class="absolute inset-0 w-full h-full object-cover" />
+
+    <!-- Right: interactive map -->
+    <div class="flex-1" style="min-height: 480px;">
+      <div id="area-map" style="width:100%; height:100%; min-height:480px;"></div>
     </div>
+
   </div>
 </section>
 
@@ -1097,10 +1141,30 @@
 
 <!-- ══════════════════════════════════════════════════════ FOOTER -->
 <footer class="bg-primary text-on-primary">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-max-width mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-mobile md:px-margin-desktop py-12 max-w-max-width mx-auto">
     <div class="space-y-6">
-      <p class="font-headline-md text-headline-md text-on-primary">Shenandoah Retreat</p>
-      <p class="text-on-primary/75 font-body-md">Pet-friendly log cabin near the Shenandoah River — hot tub, game room, kayak, fire pit. Hosted by Rex.</p>
+      <div class="flex items-center gap-3">
+        <img src="photos/logo.jpg" alt="The Foxhole Cabin fox logo"
+             class="w-12 h-12 rounded-xl object-cover shadow-md flex-shrink-0" />
+        <p class="font-headline-md text-headline-md text-on-primary">The Foxhole Cabin</p>
+      </div>
+      <p class="text-on-primary/75 font-body-md">Pet-friendly log cabin near the Shenandoah River — luxury salt water hot tub, game room, kayak. Hosted by Rex and Michelle.</p>
+      <div class="flex items-center gap-4 pt-1">
+        <a href="https://www.facebook.com/share/1DCnFr4ikz/?mibextid=wwXIfr" target="_blank" rel="noopener"
+           aria-label="The Foxhole Cabin on Facebook"
+           class="text-on-primary/60 hover:text-on-primary transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/foxholecabin?utm_source=qr" target="_blank" rel="noopener"
+           aria-label="The Foxhole Cabin on Instagram"
+           class="text-on-primary/60 hover:text-on-primary transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </a>
+      </div>
     </div>
     <div class="flex flex-col gap-4">
       <h4 class="font-label-md uppercase tracking-widest text-secondary-fixed">Explore</h4>
@@ -1109,21 +1173,9 @@
       <a href="#gallery"      class="text-on-primary/75 hover:text-on-primary transition-colors font-body-md">Gallery</a>
       <a href="#availability" class="text-on-primary/75 hover:text-on-primary transition-colors font-body-md">Availability</a>
     </div>
-    <div class="space-y-6">
-      <h4 class="font-label-md uppercase tracking-widest text-secondary-fixed">Stay Connected</h4>
-      <p class="text-on-primary/75 font-body-md">Get seasonal updates and be first to know about openings.</p>
-      <form class="flex gap-2" onsubmit="return false;">
-        <input type="email" placeholder="Email address"
-               class="bg-primary-container/60 border-none rounded-lg flex-1 px-4 py-2.5 text-on-primary placeholder-on-primary/40 focus:ring-2 focus:ring-secondary outline-none" />
-        <button type="submit"
-                class="bg-on-primary text-primary px-4 py-2.5 rounded-lg font-label-sm hover:opacity-90 active:scale-95 transition-all">
-          Join
-        </button>
-      </form>
-    </div>
   </div>
   <div class="border-t border-on-primary/10 py-6 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-    <p class="text-on-primary/50 text-label-sm">© 2026 Shenandoah Retreat. All rights reserved.</p>
+    <p class="text-on-primary/50 text-label-sm">© 2026 The Foxhole Cabin. All rights reserved.</p>
     <div class="flex gap-6">
       <a href="#" class="text-on-primary/50 hover:text-on-primary/80 transition-colors text-label-sm">House Rules</a>
       <a href="#" class="text-on-primary/50 hover:text-on-primary/80 transition-colors text-label-sm">Privacy Policy</a>
@@ -1133,6 +1185,7 @@
 
 
 <!-- ══════════════════════════════════════════════════════ SCRIPTS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 /* ============================================================
    SANITY CONFIG
@@ -1237,6 +1290,20 @@ async function fetchReviews() {
 }
 
 async function fetchBlockedDates() {
+  // Try the GitHub-Actions-synced file first (no Sanity needed)
+  try {
+    const res = await fetch('availability.json');
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data?.ranges)) {
+        window._blockedRanges = data.ranges;
+        renderCalendars();
+        return;
+      }
+    }
+  } catch {}
+
+  // Fall back to Sanity if configured
   const data = await sanityFetch(
     `*[_type == "blockedDates" && _id == "blocked-dates-singleton"][0]{ ranges }`
   );
@@ -1437,7 +1504,7 @@ document.getElementById('inquiry-form')?.addEventListener('submit', function(e) 
   const body = encodeURIComponent(
     `Name: ${name}\nEmail: ${email}\nCheck-in: ${ci}\nCheck-out: ${co}\nGuests: ${guests}\n\n${msg}`
   );
-  window.open(`mailto:saihemanth@gmail.com?subject=Shenandoah Retreat Inquiry&body=${body}`, '_blank');
+  window.open(`mailto:saihemanth@gmail.com?subject=Foxhole Cabin Inquiry&body=${body}`, '_blank');
 
   this.reset();
   const success = document.getElementById('form-success');
@@ -1511,7 +1578,7 @@ document.querySelectorAll('.fade-up:not(.hero-anim)').forEach(el => animObserver
    HERO SLIDESHOW
    ============================================================ */
 (function () {
-  const LABELS = ['Fire Pit', 'Private Hot Tub', 'Living Room', 'Nearby Lake'];
+  const LABELS = ['Private Hot Tub', 'Living Room', 'Nearby Lake'];
   const slides = Array.from(document.querySelectorAll('.hero-slide'));
   const dots   = Array.from(document.querySelectorAll('.hero-dot'));
   const label  = document.getElementById('hero-label');
@@ -1607,14 +1674,86 @@ renderReviews(FALLBACK.reviews);
 renderCalendars();
 rebindLightbox();
 
+// Always load live availability from GitHub-Actions-synced file
+fetchBlockedDates().catch(() => {});
+
 if (SANITY_PROJECT_ID !== 'YOUR_PROJECT_ID') {
   Promise.all([
     fetchProperty(),
     fetchReviews(),
-    fetchBlockedDates(),
     fetchGallery(),
   ]).catch(() => {});
 }
+
+/* ============================================================
+   AREA MAP — Leaflet / OpenStreetMap (no API key required)
+   Pin coordinates are approximate; adjust if needed.
+   ============================================================ */
+(function () {
+  if (typeof L === 'undefined') return;
+  const mapEl = document.getElementById('area-map');
+  if (!mapEl) return;
+
+  const map = L.map('area-map', { scrollWheelZoom: false, zoomControl: true });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>',
+    maxZoom: 18,
+  }).addTo(map);
+
+  function mkPin(color, label) {
+    return L.divIcon({
+      html: `<div style="background:${color};color:#fff;width:32px;height:32px;border-radius:50%;
+                         display:flex;align-items:center;justify-content:center;
+                         font-size:11px;font-weight:700;letter-spacing:0;
+                         border:2.5px solid rgba(255,255,255,0.9);
+                         box-shadow:0 2px 8px rgba(0,0,0,0.35);
+                         font-family:system-ui,sans-serif;">${label}</div>`,
+      className: '',
+      iconSize: [32, 32],
+      iconAnchor: [16, 16],
+      popupAnchor: [0, -20],
+    });
+  }
+
+  const POINTS = [
+    { name: 'The Foxhole Cabin',                   lat: 38.920, lng: -78.170, color: '#805524', label: '🏡' },
+    { name: 'Shenandoah National Park',             lat: 38.875, lng: -78.206, color: '#16A34A', label: 'NP' },
+    { name: 'Skyline Drive — Front Royal Entrance', lat: 38.919, lng: -78.197, color: '#16A34A', label: 'SD' },
+    { name: 'Fox Meadow Winery',                    lat: 38.964, lng: -78.070, color: '#7C2D12', label: 'W' },
+    { name: 'Delaplane Cellars',                    lat: 38.932, lng: -77.962, color: '#7C2D12', label: 'W' },
+    { name: 'Bear Chase Brewing',                   lat: 39.099, lng: -77.835, color: '#92400E', label: 'B' },
+    { name: 'Appalachian Trail — Ashby Gap',        lat: 38.984, lng: -77.961, color: '#EA580C', label: 'AT' },
+  ];
+
+  const bounds = [];
+  POINTS.forEach(p => {
+    const mapsUrl = 'https://www.google.com/maps/search/' + encodeURIComponent(p.name + ' Virginia');
+    L.marker([p.lat, p.lng], { icon: mkPin(p.color, p.label) })
+      .bindPopup(
+        `<div style="font-family:system-ui,sans-serif;min-width:170px;padding:2px 0;">
+           <strong style="font-size:13px;color:#1c1c18;">${p.name}</strong><br>
+           <a href="${mapsUrl}" target="_blank" rel="noopener"
+              style="font-size:12px;color:#805524;text-decoration:none;">Get Directions →</a>
+         </div>`
+      )
+      .addTo(map);
+    bounds.push([p.lat, p.lng]);
+  });
+
+  map.fitBounds(bounds, { padding: [28, 28] });
+
+  /* Re-render after layout settles (needed inside flex container) */
+  setTimeout(() => map.invalidateSize(), 200);
+
+  /* Also invalidate when section first scrolls into view */
+  const mapSection = mapEl.closest('section');
+  if (mapSection) {
+    new IntersectionObserver((entries, obs) => {
+      if (entries[0].isIntersecting) { map.invalidateSize(); obs.disconnect(); }
+    }).observe(mapSection);
+  }
+})();
 </script>
 </body>
 </html>
