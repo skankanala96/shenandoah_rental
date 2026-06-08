@@ -756,60 +756,93 @@
 
     <!-- Bento grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <!-- Private Hot Tub — left, tall -->
-      <div class="relative rounded-2xl overflow-hidden group h-72 md:h-[520px] fade-up">
-        <img src="photos/hotTub.avif"
-             alt="Private rear deck with hot tub"
-             class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
-        <div class="absolute bottom-8 left-8 text-white">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="material-symbols-outlined">hot_tub</span>
-            <span class="font-label-sm uppercase tracking-widest">Outdoor</span>
+
+      <!-- LEFT COLUMN: Hot Tub + EV Charger -->
+      <div class="flex flex-col gap-4">
+        <!-- Private Hot Tub -->
+        <div class="relative rounded-2xl overflow-hidden group h-72 md:h-[520px] fade-up">
+          <img src="photos/hotTub.avif"
+               alt="Private rear deck with hot tub"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-8 left-8 text-white">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="material-symbols-outlined">hot_tub</span>
+              <span class="font-label-sm uppercase tracking-widest">Outdoor</span>
+            </div>
+            <h4 class="font-headline-sm text-headline-sm">Luxury Salt Water Hot Tub</h4>
+            <p class="text-sm opacity-75 mt-1 max-w-xs">Salt water system maximizes cleanliness and minimizes chemicals. Open year-round on the rear deck.</p>
           </div>
-          <h4 class="font-headline-sm text-headline-sm">Luxury Salt Water Hot Tub</h4>
-          <p class="text-sm opacity-75 mt-1 max-w-xs">Salt water system maximizes cleanliness and minimizes chemicals. Open year-round on the rear deck.</p>
+        </div>
+
+        <!-- EV Charger -->
+        <div class="relative rounded-2xl overflow-hidden group h-72 md:h-[520px] fade-up d4">
+          <img src="photos/ev_charger.jpeg"
+               alt="Level 2 EV charger mounted on exterior wall"
+               class="absolute inset-0 w-full h-full object-cover object-[center_70%] group-hover:scale-110 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-8 left-8 text-white">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="material-symbols-outlined">ev_station</span>
+              <span class="font-label-sm uppercase tracking-widest">EV Friendly</span>
+            </div>
+            <h4 class="font-headline-sm text-headline-sm">Level 2 EV Charger</h4>
+            <p class="text-sm opacity-75 mt-1 max-w-xs">ChargePoint Level 2 charger — charge overnight, wake up full.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Patio / Deck — right, same tall height -->
-      <div class="relative rounded-2xl overflow-hidden group h-72 md:h-[520px] fade-up d1">
-        <img src="photos/patio_v2.avif"
-             alt="Porch and deck with outdoor seating"
-             class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent"></div>
-        <div class="absolute bottom-8 left-8 text-white">
-          <div class="flex items-center gap-2 mb-2">
-            <span class="material-symbols-outlined">deck</span>
-            <span class="font-label-sm uppercase tracking-widest">Outdoor Living</span>
+      <!-- RIGHT COLUMN: Porch + WiFi + Game Room -->
+      <div class="flex flex-col gap-4">
+        <!-- Patio / Deck -->
+        <div class="relative rounded-2xl overflow-hidden group h-72 md:h-[520px] fade-up d1">
+          <img src="photos/patio_v2.avif"
+               alt="Porch and deck with outdoor seating"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent"></div>
+          <div class="absolute bottom-8 left-8 text-white">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="material-symbols-outlined">deck</span>
+              <span class="font-label-sm uppercase tracking-widest">Outdoor Living</span>
+            </div>
+            <h4 class="font-headline-sm text-headline-sm">Porch & Deck</h4>
+            <p class="text-sm opacity-75 mt-1 max-w-xs">Front porch seating and rear deck — all yours</p>
           </div>
-          <h4 class="font-headline-sm text-headline-sm">Porch & Deck</h4>
-          <p class="text-sm opacity-75 mt-1 max-w-xs">Front porch seating and rear deck — all yours</p>
+        </div>
+
+        <!-- WiFi tile -->
+        <div class="relative rounded-2xl overflow-hidden group flex-1 hover:brightness-105 transition-all duration-300 fade-up d2">
+          <img src="photos/exterior_coffee.avif"
+               alt="Morning coffee on the porch"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="material-symbols-outlined">wifi</span>
+              <span class="font-label-sm uppercase tracking-widest">Connectivity</span>
+            </div>
+            <h4 class="font-headline-sm text-headline-sm">High-Speed WiFi</h4>
+            <p class="text-sm opacity-75 mt-1">Fast enough for remote work and streaming.</p>
+          </div>
+        </div>
+
+        <!-- Game Room -->
+        <div class="relative rounded-2xl overflow-hidden group flex-1 fade-up d3">
+          <img src="photos/gameroom.avif"
+               alt="Lower-level game room"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 text-white">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="material-symbols-outlined">sports_esports</span>
+              <span class="font-label-sm uppercase tracking-widest">Entertainment</span>
+            </div>
+            <h4 class="font-headline-sm text-headline-sm">Game Room</h4>
+            <p class="text-sm opacity-75 mt-1">Lower level with TV, games, and entertainment area.</p>
+          </div>
         </div>
       </div>
 
-      <!-- WiFi tile -->
-      <div class="relative rounded-2xl bg-primary text-on-primary p-8 flex flex-col justify-end h-48 hover:brightness-110 transition-all duration-300 fade-up d2">
-        <span class="material-symbols-outlined text-4xl mb-4 text-primary-fixed">wifi</span>
-        <h4 class="font-headline-sm text-headline-sm">High-Speed WiFi</h4>
-        <p class="text-on-primary-container text-sm mt-2 leading-snug">Fast enough for remote work and streaming.</p>
-      </div>
-
-      <!-- Game Room — with real photo -->
-      <div class="relative rounded-2xl overflow-hidden group h-48 fade-up d3">
-        <img src="photos/gameroom.avif"
-             alt="Lower-level game room"
-             class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
-        <div class="absolute bottom-6 left-6 text-white">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="material-symbols-outlined">sports_esports</span>
-            <span class="font-label-sm uppercase tracking-widest">Entertainment</span>
-          </div>
-          <h4 class="font-headline-sm text-headline-sm">Game Room</h4>
-          <p class="text-sm opacity-75 mt-1">Lower level with TV, games, and entertainment area.</p>
-        </div>
-      </div>
     </div>
 
     <!-- Amenity chip grid (CMS-driven; fallback rendered by JS) -->
@@ -1218,7 +1251,7 @@ const FALLBACK = {
   amenities: [
     { icon: 'sports_esports',        name: 'Game Room',           highlight: true  },
     { icon: 'kayaking',              name: 'Kayak Included',      highlight: true  },
-    { icon: 'ev_station',            name: 'EV Charger',          highlight: false },
+    { icon: 'ev_station',            name: 'EV Charger',          highlight: true  },
     { icon: 'local_laundry_service', name: 'Washer & Dryer',      highlight: false },
     { icon: 'coffee',                name: 'Drip & Keurig',       highlight: false },
     { icon: 'thermostat',            name: 'Heated Floors',       highlight: true  },
