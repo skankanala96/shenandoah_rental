@@ -1524,24 +1524,34 @@ function rebindLightbox() {
 /* ============================================================
    INQUIRY FORM — mailto fallback + success message
    ============================================================ */
-document.getElementById('inquiry-form')?.addEventListener('submit', function(e) {
+document.getElementById('inquiry-form')?.addEventListener('submit', async function(e) {
   e.preventDefault();
-  const data  = new FormData(this);
-  const name  = data.get('name')    || '';
-  const email = data.get('email')   || '';
-  const ci    = data.get('checkin') || '';
-  const co    = data.get('checkout')|| '';
-  const guests= data.get('guests')  || '';
-  const msg   = data.get('message') || '';
-
-  const body = encodeURIComponent(
-    `Name: ${name}\nEmail: ${email}\nCheck-in: ${ci}\nCheck-out: ${co}\nGuests: ${guests}\n\n${msg}`
-  );
-  window.open(`mailto:saihemanth@gmail.com?subject=Foxhole Cabin Inquiry&body=${body}`, '_blank');
-
-  this.reset();
+  const FORMSPREE_ID = 'mvzngkqg';
+  const btn = this.querySelector('button[type="submit"]');
   const success = document.getElementById('form-success');
-  if (success) { success.classList.remove('hidden'); setTimeout(() => success.classList.add('hidden'), 6000); }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method: 'POST',
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      this.reset();
+      if (success) { success.classList.remove('hidden'); setTimeout(() => success.classList.add('hidden'), 6000); }
+    } else {
+      alert('Something went wrong. Please try again or email us directly.');
+    }
+  } catch {
+    alert('Network error. Please check your connection and try again.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Inquiry';
+  }
 });
 
 /* ============================================================
