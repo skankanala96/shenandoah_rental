@@ -317,7 +317,7 @@
       <a href="#contact"      class="nav-link font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors">Contact</a>
     </div>
     <div class="flex items-center gap-2">
-      <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
+      <a href="#contact"
          class="nav-book-btn hidden md:inline-flex bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:opacity-90 active:scale-95 transition-all">
         Book Now
       </a>
@@ -338,9 +338,8 @@
   <a href="#gallery"      class="mobile-nav font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors py-1">Gallery</a>
   <a href="#availability" class="mobile-nav font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors py-1">Availability</a>
   <a href="#contact"      class="mobile-nav font-headline-sm text-headline-sm text-on-surface hover:text-primary transition-colors py-1">Contact</a>
-  <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
-     class="mt-auto bg-primary text-on-primary px-6 py-4 rounded-full font-label-md text-center hover:opacity-90 transition-all">
-    Book on Airbnb
+  <a href="#contact" class="mobile-nav mt-auto bg-primary text-on-primary px-6 py-4 rounded-full font-label-md text-center hover:opacity-90 transition-all">
+    Book Now
   </a>
 </div>
 <div id="menu-overlay" class="fixed inset-0 bg-black/30 z-40 hidden" aria-hidden="true"></div>
@@ -361,7 +360,7 @@
     </div>
     <div class="hero-slide" data-kb="d">
       <img class="hero-slide-img" src="photos/nearby_lake.avif"
-           alt="Nearby lake and Shenandoah Valley scenery" loading="lazy" />
+           alt="Shenandoah River scenery" loading="lazy" />
     </div>
   </div>
 
@@ -416,7 +415,7 @@
   <div id="hero-dots" class="absolute bottom-7 left-1/2 -translate-x-1/2 z-[3] flex gap-2.5 items-center">
     <button class="hero-dot active" data-index="0" aria-label="Photo 1: Hot tub"></button>
     <button class="hero-dot"        data-index="1" aria-label="Photo 2: Living room"></button>
-    <button class="hero-dot"        data-index="2" aria-label="Photo 3: Nearby lake"></button>
+    <button class="hero-dot"        data-index="2" aria-label="Photo 3: Shenandoah River"></button>
   </div>
 
 </section>
@@ -721,11 +720,11 @@
     <div class="col-span-1 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[130px] md:h-52"
          data-src="photos/nearby_lake.avif">
       <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-           src="photos/nearby_lake.avif" alt="Nearby lake and scenery" />
+           src="photos/nearby_lake.avif" alt="Shenandoah River and scenery" />
       <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
         <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
       </div>
-      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Nearby Lake</div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Shenandoah River</div>
     </div>
   </div>
 </section>
@@ -1621,7 +1620,7 @@ document.querySelectorAll('.fade-up:not(.hero-anim)').forEach(el => animObserver
    HERO SLIDESHOW
    ============================================================ */
 (function () {
-  const LABELS = ['Private Hot Tub', 'Living Room', 'Nearby Lake'];
+  const LABELS = ['Private Hot Tub', 'Living Room', 'Shenandoah River'];
   const slides = Array.from(document.querySelectorAll('.hero-slide'));
   const dots   = Array.from(document.querySelectorAll('.hero-dot'));
   const label  = document.getElementById('hero-label');
