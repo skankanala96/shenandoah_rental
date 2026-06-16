@@ -362,6 +362,10 @@
       <img class="hero-slide-img" src="photos/nearby_lake.avif"
            alt="Shenandoah River scenery" loading="lazy" />
     </div>
+    <div class="hero-slide" data-kb="a">
+      <img class="hero-slide-img" src="photos/home_nightview.jpeg"
+           alt="Cabin entrance glowing at night under the moon" loading="lazy" />
+    </div>
   </div>
 
   <!-- Gradient overlay: concentrated at bottom so image stays vivid -->
@@ -416,6 +420,7 @@
     <button class="hero-dot active" data-index="0" aria-label="Photo 1: Hot tub"></button>
     <button class="hero-dot"        data-index="1" aria-label="Photo 2: Living room"></button>
     <button class="hero-dot"        data-index="2" aria-label="Photo 3: Shenandoah River"></button>
+    <button class="hero-dot"        data-index="3" aria-label="Photo 4: Cabin at night"></button>
   </div>
 
 </section>
@@ -482,25 +487,25 @@
 <section class="bg-surface-container-low border-y border-outline/10">
   <div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
     <div class="grid grid-cols-2 md:grid-cols-4 md:divide-x md:divide-outline/20">
-      <div class="flex flex-col items-center justify-center py-5 gap-1.5 fade-up">
+      <div class="flex flex-col items-center justify-start py-5 gap-1.5 fade-up">
         <span class="material-symbols-outlined text-secondary text-3xl">king_bed</span>
         <p class="font-headline-sm text-[16px] md:text-headline-sm text-primary">3 Bedrooms</p>
-        <p class="text-label-sm text-outline uppercase tracking-widest">Sleeps 6</p>
+        <p class="text-label-sm text-outline uppercase tracking-widest text-center max-w-[160px]">Sleeps 6</p>
       </div>
-      <div class="flex flex-col items-center justify-center py-5 gap-1.5 fade-up d1">
+      <div class="flex flex-col items-center justify-start py-5 gap-1.5 fade-up d1">
         <span class="material-symbols-outlined text-secondary text-3xl">bathtub</span>
         <p class="font-headline-sm text-[16px] md:text-headline-sm text-primary">2.5 Baths</p>
-        <p class="text-label-sm text-outline uppercase tracking-widest">Rain shower + heated floors (main & basement)</p>
+        <p class="text-label-sm text-outline uppercase tracking-widest text-center max-w-[160px]">Rain shower + heated floors (main & basement)</p>
       </div>
-      <div class="flex flex-col items-center justify-center py-5 gap-1.5 fade-up d2">
+      <div class="flex flex-col items-center justify-start py-5 gap-1.5 fade-up d2">
         <span class="material-symbols-outlined text-secondary text-3xl">stairs</span>
         <p class="font-headline-sm text-[16px] md:text-headline-sm text-primary">3 Levels</p>
-        <p class="text-label-sm text-outline uppercase tracking-widest">Loft · Main · Game room</p>
+        <p class="text-label-sm text-outline uppercase tracking-widest text-center max-w-[160px]">Loft · Main · Game room</p>
       </div>
-      <div class="flex flex-col items-center justify-center py-5 gap-1.5 fade-up d3">
+      <div class="flex flex-col items-center justify-start py-5 gap-1.5 fade-up d3">
         <span class="material-symbols-outlined text-secondary text-3xl">hot_tub</span>
         <p class="font-headline-sm text-[16px] md:text-headline-sm text-primary">Salt Water Hot Tub</p>
-        <p class="text-label-sm text-outline uppercase tracking-widest">Luxury · Chemical-light · Year-round</p>
+        <p class="text-label-sm text-outline uppercase tracking-widest text-center max-w-[160px]">Luxury · Chemical-light · Year-round</p>
       </div>
     </div>
   </div>
@@ -725,6 +730,26 @@
         <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
       </div>
       <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Shenandoah River</div>
+    </div>
+
+    <!-- Row 5 -->
+    <div class="col-span-2 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[160px] md:h-52"
+         data-src="photos/deck_parties.jpeg">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/deck_parties.jpeg" alt="Deck and hot tub lit up at night with string lights" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-5xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Evening on the Deck</div>
+    </div>
+    <div class="col-span-2 gallery-item rounded-2xl overflow-hidden cursor-pointer group relative h-[160px] md:h-52"
+         data-src="photos/game_nights.jpeg">
+      <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+           src="photos/game_nights.jpeg" alt="Card games and board games at the coffee table" />
+      <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-5xl drop-shadow-lg">zoom_in</span>
+      </div>
+      <div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">Game Nights</div>
     </div>
   </div>
 </section>
@@ -1620,7 +1645,7 @@ document.querySelectorAll('.fade-up:not(.hero-anim)').forEach(el => animObserver
    HERO SLIDESHOW
    ============================================================ */
 (function () {
-  const LABELS = ['Private Hot Tub', 'Living Room', 'Shenandoah River'];
+  const LABELS = ['Private Hot Tub', 'Living Room', 'Shenandoah River', 'Cabin at Night'];
   const slides = Array.from(document.querySelectorAll('.hero-slide'));
   const dots   = Array.from(document.querySelectorAll('.hero-dot'));
   const label  = document.getElementById('hero-label');
