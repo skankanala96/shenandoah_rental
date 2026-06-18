@@ -46,6 +46,32 @@ function toDateStr(raw) {
   return m ? m[1] : null;
 }
 
+const MINIMUM_STAY_NIGHTS = 2;
+
+function daysBetween(a, b) {
+  // a and b are YYYYMMDD strings
+  const parse = s => new Date(s.slice(0, 4), s.slice(4, 6) - 1, s.slice(6, 8));
+  return (parse(b) - parse(a)) / 86400000;
+}
+
+// Fill gaps between adjacent blocked ranges that are too short to book.
+// With a 2-night minimum stay, a 1- or 2-day gap between bookings can't
+// be booked but Airbnb's iCal omits those days entirely.
+function fillGaps(ranges) {
+  const sorted = [...ranges].sort((a, b) => (a.start > b.start ? 1 : -1));
+  const filled = [];
+  for (let i = 0; i < sorted.length; i++) {
+    filled.push(sorted[i]);
+    if (i < sorted.length - 1) {
+      const gap = daysBetween(sorted[i].end, sorted[i + 1].start);
+      if (gap > 0 && gap <= MINIMUM_STAY_NIGHTS) {
+        filled.push({ start: sorted[i].end, end: sorted[i + 1].start });
+      }
+    }
+  }
+  return filled;
+}
+
 function parseEvents(ical) {
   const ranges = [];
   const events = ical.split('BEGIN:VEVENT');
@@ -80,7 +106,9 @@ function parseEvents(ical) {
       }
     }
 
-    // Sort by start date for tidiness
+    // Fill gaps between bookings that are too short to be booked given the
+    // minimum stay, then sort. Airbnb omits these gap nights from the iCal.
+    ranges = fillGaps(ranges);
     ranges.sort((a, b) => (a.start > b.start ? 1 : -1));
 
     const out = JSON.stringify(
