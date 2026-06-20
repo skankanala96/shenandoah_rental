@@ -16,10 +16,11 @@ const path  = require('path');
 const sources = [
   { name: 'Airbnb',     url: process.env.AIRBNB_ICAL_URL },
   { name: 'Booking.com', url: process.env.BOOKING_ICAL_URL },
+  { name: 'VRBO',       url: process.env.VRBO_ICAL_URL },
 ].filter(s => s.url);
 
 if (sources.length === 0) {
-  console.error('No iCal URLs set. Provide AIRBNB_ICAL_URL and/or BOOKING_ICAL_URL.');
+  console.error('No iCal URLs set. Provide AIRBNB_ICAL_URL, BOOKING_ICAL_URL, and/or VRBO_ICAL_URL.');
   process.exit(1);
 }
 

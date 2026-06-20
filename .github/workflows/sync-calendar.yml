@@ -23,6 +23,7 @@ jobs:
         env:
           AIRBNB_ICAL_URL: ${{ secrets.AIRBNB_ICAL_URL }}
           BOOKING_ICAL_URL: ${{ secrets.BOOKING_ICAL_URL }}
+          VRBO_ICAL_URL: ${{ secrets.VRBO_ICAL_URL }}
 
       - name: Commit if changed
         run: |
