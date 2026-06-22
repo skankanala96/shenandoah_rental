@@ -1,8 +1,8 @@
 name: Sync Booking Calendars
 
 on:
-  # schedule:
-  #   - cron: '*/30 * * * *'   # every 30 minutes — paused until further notice
+  schedule:
+    - cron: '*/30 * * * *'   # every 30 minutes
   workflow_dispatch:           # allow manual trigger from GitHub UI
 
 permissions:
