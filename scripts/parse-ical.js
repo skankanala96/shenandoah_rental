@@ -56,8 +56,9 @@ function daysBetween(a, b) {
 }
 
 // Fill gaps between adjacent blocked ranges that are too short to book.
-// With a 2-night minimum stay, a 1- or 2-day gap between bookings can't
-// be booked but Airbnb's iCal omits those days entirely.
+// With a 2-night minimum stay, a gap shorter than the minimum can't be
+// booked but Airbnb's iCal omits those days entirely. A gap exactly equal
+// to the minimum stay IS bookable and must not be filled.
 function fillGaps(ranges) {
   const sorted = [...ranges].sort((a, b) => (a.start > b.start ? 1 : -1));
   const filled = [];
@@ -65,7 +66,7 @@ function fillGaps(ranges) {
     filled.push(sorted[i]);
     if (i < sorted.length - 1) {
       const gap = daysBetween(sorted[i].end, sorted[i + 1].start);
-      if (gap > 0 && gap <= MINIMUM_STAY_NIGHTS) {
+      if (gap > 0 && gap < MINIMUM_STAY_NIGHTS) {
         filled.push({ start: sorted[i].end, end: sorted[i + 1].start });
       }
     }
