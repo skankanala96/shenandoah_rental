@@ -1422,7 +1422,8 @@ async function fetchGallery() {
            src="${src}" alt="${photo.caption || 'Property photo'}" />
       <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
         <span class="material-symbols-outlined text-white text-4xl drop-shadow-lg">zoom_in</span>
-      </div>`;
+      </div>
+      ${photo.caption ? `<div class="absolute bottom-3 left-3 z-10 bg-black/55 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full pointer-events-none">${photo.caption}</div>` : ''}`;
     grid.appendChild(div);
   });
 
