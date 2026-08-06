@@ -1304,7 +1304,7 @@
    SANITY CONFIG
    Fill in SANITY_PROJECT_ID once you've run `npm create sanity@latest`
    ============================================================ */
-const SANITY_PROJECT_ID = 'YOUR_PROJECT_ID'; // <-- replace after Sanity setup
+const SANITY_PROJECT_ID = '5ctaxts3';
 const SANITY_DATASET    = 'production';
 
 async function sanityFetch(query) {
@@ -1348,29 +1348,6 @@ const FALLBACK = {
     { icon: 'forest',    text: 'George Richard Thompson Wildlife Area — 11 min drive'      },
     { icon: 'landscape', text: 'Sky Meadows State Park — 14 min drive'                    },
   ],
-  reviews: [
-    {
-      guestName: 'Sarah Jenkins',
-      location:  'Richmond, VA',
-      date:      'October 2023',
-      rating:    5,
-      text:      'An absolute gem. The kids loved the game room and we spent every night in the hot tub. The cabin is brand new and the finishes are incredible — heated bathroom floors, rain shower, everything. We\'re already planning our return.',
-    },
-    {
-      guestName: 'Mark Thompson',
-      location:  'Washington, D.C.',
-      date:      'September 2023',
-      rating:    5,
-      text:      'Perfect base for the Shenandoah Valley. We hit two wineries and came back to soak in the hot tub. The kitchen is fully equipped — we cooked every night. Rex was a great host and easy to reach.',
-    },
-    {
-      guestName: 'Emily & David R.',
-      location:  'Philadelphia, PA',
-      date:      'August 2023',
-      rating:    5,
-      text:      'One of the nicest rentals we\'ve ever stayed in. The three levels give everyone their own space — kids claimed the loft, we had the main-level primary suite. The front porch with coffee in the morning was everything.',
-    },
-  ],
   blockedRanges: [],
 };
 
@@ -1391,14 +1368,6 @@ async function fetchProperty() {
   if (data.checkOut) { const el = document.getElementById('check-out'); if (el) el.textContent = data.checkOut; }
   if (data.amenities?.length)       renderAmenityChips(data.amenities);
   if (data.nearbyDistances?.length) renderNearby(data.nearbyDistances);
-}
-
-async function fetchReviews() {
-  const data = await sanityFetch(
-    `*[_type == "review" && visible == true] | order(order asc)
-     { guestName, location, date, rating, text }`
-  );
-  renderReviews(data?.length ? data : FALLBACK.reviews);
 }
 
 async function fetchBlockedDates() {
@@ -1479,30 +1448,6 @@ function renderNearby(nearby) {
       <span class="material-symbols-outlined text-secondary-fixed flex-shrink-0">${n.icon || 'place'}</span>
       ${n.text}
     </li>`).join('');
-}
-
-function renderReviews(reviews) {
-  const el = document.getElementById('slider');
-  if (!el) return;
-  el.innerHTML = reviews.map(r => {
-    const stars = Array.from({ length: r.rating || 5 }, () =>
-      `<span class="material-symbols-outlined star-filled">star</span>`).join('');
-    const initial = (r.guestName || 'G').charAt(0).toUpperCase();
-    return `
-      <article class="min-w-[300px] md:min-w-[450px] bg-white p-10 rounded-2xl shadow-sm border border-outline/5 flex-shrink-0
-                      hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-        <div class="flex text-secondary mb-6" aria-label="${r.rating || 5} stars out of 5">${stars}</div>
-        <p class="font-body-lg text-body-lg italic text-primary mb-8">"${r.text}"</p>
-        <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center
-                      font-headline-sm text-primary text-lg flex-shrink-0">${initial}</div>
-          <div>
-            <p class="font-label-md text-primary">${r.guestName}</p>
-            <p class="text-label-sm text-outline">${r.location ? r.location + ' · ' : ''}${r.date}</p>
-          </div>
-        </div>
-      </article>`;
-  }).join('');
 }
 
 /* ============================================================
@@ -1792,7 +1737,6 @@ document.querySelectorAll('.hero-anim').forEach((el, i) => {
 window._blockedRanges = FALLBACK.blockedRanges;
 
 renderAmenityChips(FALLBACK.amenities);
-renderReviews(FALLBACK.reviews);
 renderCalendars();
 rebindLightbox();
 
@@ -1802,7 +1746,6 @@ fetchBlockedDates().catch(() => {});
 if (SANITY_PROJECT_ID !== 'YOUR_PROJECT_ID') {
   Promise.all([
     fetchProperty(),
-    fetchReviews(),
     fetchGallery(),
   ]).catch(() => {});
 }

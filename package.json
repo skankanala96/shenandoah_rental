@@ -1,0 +1,13 @@
+{
+  "name": "shenandoah-rental",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "upload-gallery": "node upload-gallery.mjs"
+  },
+  "dependencies": {
+    "@sanity/client": "^6",
+    "dotenv": "^16"
+  }
+}

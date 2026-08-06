@@ -1,0 +1,22 @@
+{
+  "name": "foxhole-cabin-studio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "dev": "sanity dev",
+    "start": "sanity start"
+  },
+  "dependencies": {
+    "@sanity/icons": "^3",
+    "@sanity/vision": "^5",
+    "react": "^19",
+    "react-dom": "^19",
+    "sanity": "^5",
+    "styled-components": "^6"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  }
+}
