@@ -13,12 +13,17 @@ export const property = defineType({
   },
   fields: [
     defineField({
-      name: 'pullQuote',
-      title: 'Pull Quote',
+      name: 'heroDescription',
+      title: 'Hero Description',
       type: 'text',
       rows: 3,
-      description:
-        'The italic hero quote in the About section. Do not include quotation marks — they are added automatically.',
+      description: 'The short line under the hero title on the homepage.',
+    }),
+    defineField({
+      name: 'airbnbUrl',
+      title: 'Airbnb Listing URL',
+      type: 'url',
+      description: 'Used by every "View on Airbnb" / "Book on Airbnb" link on the site.',
     }),
     defineField({
       name: 'checkIn',

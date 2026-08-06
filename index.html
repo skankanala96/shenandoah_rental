@@ -458,7 +458,7 @@
     <h1 class="font-headline-lg text-[28px] md:text-[52px] mb-4 md:mb-5 leading-[1.1] drop-shadow-md max-w-2xl fade-up d1 hero-anim">
       Discover the Heart of the<br class="hidden md:block" /> Shenandoah Valley
     </h1>
-    <p class="text-[14px] md:text-[17px] mb-7 md:mb-10 opacity-85 max-w-md fade-up d2 hero-anim leading-relaxed font-light">
+    <p id="hero-description" class="text-[14px] md:text-[17px] mb-7 md:mb-10 opacity-85 max-w-md fade-up d2 hero-anim leading-relaxed font-light">
       Located just 8 minutes from the Front Royal entrance to Skyline Drive, our retreat serves as the ultimate basecamp for mountain adventures.
     </p>
     <div class="flex flex-wrap gap-3 fade-up d3 hero-anim">
@@ -466,7 +466,7 @@
          class="bg-secondary text-on-secondary px-5 py-2.5 md:px-8 md:py-4 rounded-full font-label-md text-[13px] md:text-label-md hover:brightness-110 active:scale-95 transition-all shadow-xl">
         Check Availability
       </a>
-      <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
+      <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener" data-cms-link="airbnb"
          class="border border-white/60 text-white px-5 py-2.5 md:px-8 md:py-4 rounded-full font-label-md text-[13px] md:text-label-md hover:bg-white/10 active:scale-95 transition-all backdrop-blur-sm">
         View on Airbnb
       </a>
@@ -661,7 +661,7 @@
       <h2 class="font-headline-md text-[22px] md:text-headline-md text-primary fade-up d1">The Space</h2>
       <p class="font-body-md text-body-md text-on-surface-variant mt-2 fade-up d2">Click any photo to explore in full screen</p>
     </div>
-    <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
+    <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener" data-cms-link="airbnb"
        class="inline-flex items-center gap-1.5 font-label-md text-secondary hover:text-primary transition-colors fade-up d2 flex-shrink-0 group">
       View all photos on Airbnb
       <span class="material-symbols-outlined text-xl group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
@@ -1025,7 +1025,7 @@
         </li>
       </ul>
 
-      <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener"
+      <a href="https://www.airbnb.com/rooms/1494332962507378524" target="_blank" rel="noopener" data-cms-link="airbnb"
          class="inline-block bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-md hover:brightness-110 transition-all fade-up d3">
         View Full Listing
       </a>
@@ -1325,7 +1325,8 @@ async function sanityFetch(query) {
    SANITY_PROJECT_ID is set and content is seeded.
    ============================================================ */
 const FALLBACK = {
-  pullQuote: 'Spend your mornings drinking coffee on the front porch, your days exploring, and your nights soaking in the hot tub under the stars.',
+  heroDescription: 'Located just 8 minutes from the Front Royal entrance to Skyline Drive, our retreat serves as the ultimate basecamp for mountain adventures.',
+  airbnbUrl: 'https://www.airbnb.com/rooms/1494332962507378524',
   checkIn:  '3:00 PM',
   checkOut: '11:00 AM',
   amenities: [
@@ -1357,12 +1358,15 @@ const FALLBACK = {
 async function fetchProperty() {
   const data = await sanityFetch(
     `*[_type == "property" && _id == "property-singleton"][0]
-     { pullQuote, checkIn, checkOut, amenities, nearbyDistances }`
+     { heroDescription, checkIn, checkOut, amenities, nearbyDistances, airbnbUrl }`
   );
   if (!data) return;
-  if (data.pullQuote) {
-    const el = document.getElementById('pull-quote');
-    if (el) el.textContent = `"${data.pullQuote}"`;
+  if (data.heroDescription) {
+    const el = document.getElementById('hero-description');
+    if (el) el.textContent = data.heroDescription;
+  }
+  if (data.airbnbUrl) {
+    document.querySelectorAll('[data-cms-link="airbnb"]').forEach(a => { a.href = data.airbnbUrl; });
   }
   if (data.checkIn)  { const el = document.getElementById('check-in');  if (el) el.textContent = data.checkIn;  }
   if (data.checkOut) { const el = document.getElementById('check-out'); if (el) el.textContent = data.checkOut; }
