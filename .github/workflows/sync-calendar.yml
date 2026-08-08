@@ -19,7 +19,7 @@ jobs:
           node-version: '20'
 
       - name: Parse iCal and write availability.json
-        run: node scripts/parse-ical.js
+        run: node scripts/parse-ical.cjs
         env:
           AIRBNB_ICAL_URL: ${{ secrets.AIRBNB_ICAL_URL }}
           BOOKING_ICAL_URL: ${{ secrets.BOOKING_ICAL_URL }}
